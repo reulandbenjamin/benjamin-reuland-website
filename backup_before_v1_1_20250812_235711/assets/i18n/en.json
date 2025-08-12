@@ -8,28 +8,26 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
+    "timeline": "Timeline",
     "services": "Services",
     "contact": "Contact",
     "legal": "Legal"
   },
   "hero": {
     "title": "Engineering & Web, built for the real world.",
-    "subtitle": "My name is Benjamin, I'm an industrial engineering student, self-taught in the web and committed to a better world",
+    "subtitle": "I’m an industrial engineering student, self-taught in the web, committed to a better world.",
     "ctaProjects": "See my projects",
     "ctaContact": "Contact me"
   },
   "highlights": {
-    "student": "Engineering student",
-    "studentDesc": "I study industrial engineering in Liège, specializing in electronics and embedded systems.",
-    "dev": "Web developer",
-    "devDesc": "I build fast static sites, online stores and SEO-optimised pages.",
-    "youth": "Social engagement",
-    "youthDesc": "I’ve invested in various projects with the same purpose: changing the world."
+    "student": "Engineering Student",
+    "dev": "Web Developer",
+    "youth": "Youth Engagement"
   },
   "about": {
     "title": "About",
-    "p1": "I’m Benjamin. I turn real needs into useful solutions: clear interfaces, reliable embedded systems and fast websites.",
-    "p2": "Curious and hands-on, I prototype quickly, measure and improve. My aim is tangible impact for nonprofits, artisans and education projects.",
+    "p1": "I design simple, robust solutions at the crossroads of engineering and digital.",
+    "p2": "I learn fast, iterate, and connect technology with social usefulness.",
     "goals": [
       "Internship in electronics/embedded",
       "Freelance web missions",
@@ -48,50 +46,66 @@
     "title": "Projects",
     "filterAll": "All",
     "filterWeb": "Web",
-    "filterIngWeb": "Engineering & web",
+    "filterInd": "Industrial",
     "filterSoc": "Social",
     "items": [
       {
         "title": "Mini Market of Belgian Creators",
-        "desc": "Development of a platform bringing together small Belgian makers",
+        "desc": "Local platform highlighting makers and shops.",
         "tags": [
           "web"
         ]
       },
       {
         "title": "SuperWAAD",
-        "desc": "Complete redesign of the brand identity and website for a local cabinetmaker",
+        "desc": "Web tool for workshops and educational activities.",
         "tags": [
-          "web"
+          "web",
+          "social"
         ]
       },
       {
         "title": "Repair Café Asty-Moulin",
-        "desc": "Creation of a Repair Café at my secondary school (Ashoka Belgium Young Changemaker)",
+        "desc": "Coordination and comms for an Ashoka initiative.",
         "tags": [
           "social"
         ]
       },
       {
-        "title": "Electricity lab in Italy",
-        "desc": "Built an Erasmus+ electricity lab to train students for tomorrow’s jobs",
+        "title": "Electricity Lab Erasmus+ (ISS Moretti)",
+        "desc": "Pedagogical material and lab measurements.",
         "tags": [
-          "ingweb",
+          "industrial",
           "social"
+        ]
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Timeline",
+    "items": [
+      {
+        "title": "Student representation",
+        "period": "2023–2025",
+        "bullets": [
+          "Mediation",
+          "Event organization"
         ]
       },
       {
-        "title": "Student Council",
-        "desc": "Active investment in student representation to support peers",
-        "tags": [
-          "social"
+        "title": "Nonprofit secretariat",
+        "period": "2023–2024",
+        "bullets": [
+          "Document handling",
+          "Internal processes"
         ]
       },
       {
-        "title": "Student organizations",
-        "desc": "Involvement to foster debate, critical thinking and solidarity",
-        "tags": [
-          "social"
+        "title": "Student organization presidency",
+        "period": "2023–2024",
+        "bullets": [
+          "Team leadership",
+          "Civic projects"
         ]
       }
     ]
@@ -101,15 +115,15 @@
     "items": [
       {
         "title": "Collaborative WordPress sites",
-        "desc": "From idea to launch: clear design, optimized copy, handover training. You stay in control."
+        "desc": "Clear design, UX copy, handover training."
       },
       {
         "title": "Fast static websites",
-        "desc": "Ultra-fast pages (SEO, accessibility) deployed in minutes on Plesk. Zero maintenance."
+        "desc": "Performance, SEO, accessibility. Simple Plesk deploy."
       },
       {
         "title": "Embedded prototyping / Tech advisory",
-        "desc": "Electronics, sensors, web integration: turn ideas into measurable proof-of-concepts."
+        "desc": "Electronics, sensors, web integration."
       }
     ],
     "ctaQuote": "Request a quote"
@@ -127,5 +141,9 @@
   "footer": {
     "rights": "© {year} Benjamin Reuland. All rights reserved.",
     "backToTop": "Back to top"
+  },
+  "legal": {
+    "title": "Legal notice",
+    "content": "Publisher: Benjamin Reuland — Contact: contact@benjamin-reuland.be — Hosting: Plesk. Data: forms processed for the sole purpose of replying."
   }
 }

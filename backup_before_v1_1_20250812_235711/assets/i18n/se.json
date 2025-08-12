@@ -8,28 +8,26 @@
     "about": "Om",
     "skills": "Kompetenser",
     "projects": "Projekt",
+    "timeline": "Tidslinje",
     "services": "Tjänster",
     "contact": "Kontakt",
     "legal": "Juridiskt"
   },
   "hero": {
     "title": "Ingenjörskap & webb – i verklighetens tjänst.",
-    "subtitle": "Jag heter Benjamin, jag är student i industriell ingenjörsvetenskap, självlärd inom webben och engagerad för en bättre värld",
+    "subtitle": "Jag är student i industriell ingenjörsvetenskap, självlärd inom webben och engagerad för en bättre värld.",
     "ctaProjects": "Se mina projekt",
     "ctaContact": "Kontakta mig"
   },
   "highlights": {
     "student": "Ingenjörsstudent",
-    "studentDesc": "Jag studerar industriell ingenjörsvetenskap i Liège med inriktning elektronik och inbyggda system.",
     "dev": "Webbutvecklare",
-    "devDesc": "Jag bygger snabba statiska webbplatser, webbutiker och SEO-optimerade sidor.",
-    "youth": "Samhälleligt engagemang",
-    "youthDesc": "Jag har engagerat mig i olika projekt med samma röda tråd: att förändra världen."
+    "youth": "Ungdomsengagemang"
   },
   "about": {
     "title": "Om",
-    "p1": "Jag heter Benjamin. Jag omvandlar konkreta behov till användbara lösningar: tydliga gränssnitt, pålitliga inbyggda system och snabba webbplatser.",
-    "p2": "Nyfiken och självgående: jag prototypar snabbt, mäter och förbättrar. Mitt mål är konkret effekt — för ideella, hantverkare och utbildningsprojekt.",
+    "p1": "Jag designar enkla, robusta lösningar mellan teknik och digitalt.",
+    "p2": "Jag lär mig snabbt, itererar och kopplar teknik till samhällsnytta.",
     "goals": [
       "Praktik inom elektronik/embedded",
       "Frilansuppdrag webb",
@@ -48,50 +46,66 @@
     "title": "Projekt",
     "filterAll": "Alla",
     "filterWeb": "Webb",
-    "filterIngWeb": "Ingenjörskap & webb",
+    "filterInd": "Industri",
     "filterSoc": "Socialt",
     "items": [
       {
         "title": "Mini-marknad för belgiska skapare",
-        "desc": "Utveckling av en plattform som samlar mindre belgiska kreatörer",
+        "desc": "Lokalt plattform som lyfter fram makers och butiker.",
         "tags": [
           "webb"
         ]
       },
       {
         "title": "SuperWAAD",
-        "desc": "Total omprofilering och webbplats för en lokal snickare",
+        "desc": "Webbverktyg för workshops och utbildningar.",
         "tags": [
-          "webb"
+          "webb",
+          "socialt"
         ]
       },
       {
         "title": "Repair Café Asty-Moulin",
-        "desc": "Start av ett Repair Café på min gymnasieskola (Ashoka Belgium Young Changemaker)",
+        "desc": "Koordinering och kommunikation för ett Ashoka-initiativ.",
         "tags": [
           "socialt"
         ]
       },
       {
-        "title": "El-labb i Italien",
-        "desc": "Bygge av ett Erasmus+ el-laboratorium för framtidens yrken",
+        "title": "El-labb Erasmus+ (ISS Moretti)",
+        "desc": "Didaktiskt material och mätningar i labb.",
         "tags": [
-          "ingweb",
+          "industri",
           "socialt"
+        ]
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Tidslinje",
+    "items": [
+      {
+        "title": "Studentrepresentation",
+        "period": "2023–2025",
+        "bullets": [
+          "Medling",
+          "Eventorganisation"
         ]
       },
       {
-        "title": "Studentråd",
-        "desc": "Engagemang i studentrepresentationen för att stötta studenter",
-        "tags": [
-          "socialt"
+        "title": "Föreningssekretariat",
+        "period": "2023–2024",
+        "bullets": [
+          "Dokumenthantering",
+          "Interna processer"
         ]
       },
       {
-        "title": "Studentorganisationer",
-        "desc": "Insatser för debatt, kritiskt tänkande och solidaritet",
-        "tags": [
-          "socialt"
+        "title": "Ordförande studentorganisation",
+        "period": "2023–2024",
+        "bullets": [
+          "Teamledning",
+          "Medborgarprojekt"
         ]
       }
     ]
@@ -101,15 +115,15 @@
     "items": [
       {
         "title": "WordPress i samarbete",
-        "desc": "Från idé till lansering: tydlig design, optimerad text och onboarding. Du behåller kontrollen."
+        "desc": "Tydlig design, UX-texter, onboarding."
       },
       {
         "title": "Snabba statiska webbplatser",
-        "desc": "Ultrasnabba sidor (SEO, tillgänglighet) på Plesk inom några minuter. Ingen drift."
+        "desc": "Prestanda, SEO, tillgänglighet. Enkel Plesk-deploy."
       },
       {
         "title": "Embedded-prototyper / Tech-råd",
-        "desc": "Elektronik, sensorer, webbintegration: gör idéer till mätbara proof-of-concept."
+        "desc": "Elektronik, sensorer, webbintegration."
       }
     ],
     "ctaQuote": "Begär offert"
@@ -127,5 +141,9 @@
   "footer": {
     "rights": "© {year} Benjamin Reuland. Alla rättigheter förbehållna.",
     "backToTop": "Till toppen"
+  },
+  "legal": {
+    "title": "Juridisk information",
+    "content": "Utgivare: Benjamin Reuland — Kontakt: contact@benjamin-reuland.be — Hosting: Plesk. Data: behandlas endast för att svara."
   }
 }

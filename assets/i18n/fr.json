@@ -8,26 +8,28 @@
     "about": "À propos",
     "skills": "Compétences",
     "projects": "Projets",
-    "timeline": "Timeline",
     "services": "Services",
     "contact": "Contact",
     "legal": "Mentions légales"
   },
   "hero": {
     "title": "Ingénierie & Web, au service du réel.",
-    "subtitle": "Je suis un jeune étudiant en ingénierie industrielle, autoformé au web, engagé pour un monde meilleur.",
+    "subtitle": "Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour un monde meilleur",
     "ctaProjects": "Voir mes projets",
     "ctaContact": "Me contacter"
   },
   "highlights": {
-    "student": "Étudiant Ingénieur",
+    "student": "Étudiant en ingénierie",
+    "studentDesc": "J'étudie l’ingénierie industrielle à Liège, je me spécialise en électronique et systèmes embarqués.",
     "dev": "Développeur Web",
-    "youth": "Engagement Jeunesse"
+    "devDesc": "Je développe des sites web statiques, des boutiques en ligne et des pages performantes optimisées SEO.",
+    "youth": "Engagement sociétal",
+    "youthDesc": "J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde."
   },
   "about": {
     "title": "À propos",
-    "p1": "Je conçois des solutions simples et robustes, à mi-chemin entre l’ingénierie et le numérique.",
-    "p2": "J’apprends vite, j’itère et j’aime relier technologie et utilité sociale.",
+    "p1": "Je m'appelle Benjamin. J’aime transformer des besoins concrets en solutions utiles : des interfaces claires, des systèmes embarqués fiables et des sites qui chargent vite.",
+    "p2": "Curieux et autonome, je construis vite des prototypes, je mesure, j’améliore. Mon fil rouge : apporter un impact réel — pour des associations, des artisans ou des projets éducatifs.",
     "goals": [
       "Stage en électronique/embarqués",
       "Missions freelance web",
@@ -46,66 +48,50 @@
     "title": "Projets",
     "filterAll": "Tous",
     "filterWeb": "Web",
-    "filterInd": "Industriel",
+    "filterIngWeb": "Ingénierie et web",
     "filterSoc": "Social",
     "items": [
       {
         "title": "Mini Marché des Créateurs belges",
-        "desc": "Plateforme locale pour créateurs, mise en avant des boutiques.",
+        "desc": "Développement d'une plateforme de mise en commun de petits créateurs belges",
         "tags": [
           "web"
         ]
       },
       {
         "title": "SuperWAAD",
-        "desc": "Outil web pour ateliers et animations éducatives.",
+        "desc": "Refonte complète de la charte graphique et du site web pour un ébéniste local",
         "tags": [
-          "web",
-          "social"
+          "web"
         ]
       },
       {
         "title": "Repair Café Asty-Moulin",
-        "desc": "Coordination et communication pour une initiative Ashoka.",
+        "desc": "Création d'un Repair Café dans mon enseignement secondaire (Young Changemaker Ashoka Belgium)",
         "tags": [
           "social"
         ]
       },
       {
-        "title": "Lab électricité Erasmus+ (ISS Moretti)",
-        "desc": "Matériel pédagogique et mesures en laboratoire.",
+        "title": "Construction d'un labo d'électricité en Italie",
+        "desc": "Construction d'un laboratoire d'électricité (Erasmus+) pour former aux métiers de demain",
         "tags": [
-          "industriel",
+          "ingweb",
           "social"
         ]
-      }
-    ]
-  },
-  "timeline": {
-    "title": "Timeline",
-    "items": [
+      },
       {
-        "title": "Représentation étudiante",
-        "period": "2023–2025",
-        "bullets": [
-          "Médiation",
-          "Organisation d’événements"
+        "title": "Conseil Étudiant",
+        "desc": "Investissement dans la représentation étudiante de mon EES pour accompagner les étudiants",
+        "tags": [
+          "social"
         ]
       },
       {
-        "title": "Secrétariat ASBL",
-        "period": "2023–2024",
-        "bullets": [
-          "Gestion documents",
-          "Processus internes"
-        ]
-      },
-      {
-        "title": "Présidence organisation étudiante",
-        "period": "2023–2024",
-        "bullets": [
-          "Pilotage d’équipe",
-          "Projets citoyens"
+        "title": "Organisations étudiantes",
+        "desc": "Engagement pour amener débat, esprit critique et solidarité auprès des étudiants",
+        "tags": [
+          "social"
         ]
       }
     ]
@@ -115,15 +101,15 @@
     "items": [
       {
         "title": "Sites WordPress collaboratifs",
-        "desc": "Design clair, rédaction UX, formation à la prise en main."
+        "desc": "De l’idée au site livré : design clair, contenus optimisés, formation à la prise en main. Vous repartez autonome."
       },
       {
         "title": "Sites statiques rapides",
-        "desc": "Performance, SEO, accessibilité. Déploiement simple sur Plesk."
+        "desc": "Pages ultra-performantes (SEO, accessibilité) déployées en quelques minutes sur Plesk. Zéro maintenance."
       },
       {
         "title": "Prototypage embarqué / Conseil tech",
-        "desc": "Électronique, capteurs, intégration web."
+        "desc": "Électronique, capteurs, intégration web : je fais décoller vos idées avec des preuves de concept mesurables."
       }
     ],
     "ctaQuote": "Demander un devis"
@@ -141,9 +127,5 @@
   "footer": {
     "rights": "© {year} Benjamin Reuland. Tous droits réservés.",
     "backToTop": "Haut de page"
-  },
-  "legal": {
-    "title": "Mentions légales",
-    "content": "Éditeur : Benjamin Reuland — Contact : contact@benjamin-reuland.be — Hébergement : Plesk. Données : formulaires traités aux seules fins de réponse."
   }
 }

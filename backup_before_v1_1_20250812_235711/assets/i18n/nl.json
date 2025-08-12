@@ -8,28 +8,26 @@
     "about": "Over",
     "skills": "Vaardigheden",
     "projects": "Projecten",
+    "timeline": "Tijdlijn",
     "services": "Diensten",
     "contact": "Contact",
     "legal": "Juridisch"
   },
   "hero": {
     "title": "Ingenieurschap & web, in dienst van het echte.",
-    "subtitle": "Ik heet Benjamin, ik ben student industrieel ingenieur, autodidact in het web en geëngageerd voor een betere wereld",
+    "subtitle": "Ik ben student industrieel ingenieur, autodidact in het web, en geëngageerd voor een betere wereld.",
     "ctaProjects": "Bekijk mijn projecten",
     "ctaContact": "Contact opnemen"
   },
   "highlights": {
-    "student": "Student ingenieurswetenschappen",
-    "studentDesc": "Ik studeer industrieel ingenieur in Luik met specialisatie elektronica en embedded systemen.",
+    "student": "Ingenieursstudent",
     "dev": "Webontwikkelaar",
-    "devDesc": "Ik bouw snelle statische sites, webshops en SEO-geoptimaliseerde pagina’s.",
-    "youth": "Maatschappelijke betrokkenheid",
-    "youthDesc": "Ik heb me ingezet in diverse projecten met één doel: de wereld veranderen."
+    "youth": "Jeugdengagement"
   },
   "about": {
     "title": "Over",
-    "p1": "Ik ben Benjamin. Ik vertaal echte noden naar bruikbare oplossingen: heldere interfaces, betrouwbare embedded systemen en snelle websites.",
-    "p2": "Nieuwsgierig en hands-on: ik maak snel prototypes, meet en verbeter. Mijn rode draad: tastbare impact — voor verenigingen, ambachtslieden en onderwijsprojecten.",
+    "p1": "Ik ontwerp eenvoudige, robuuste oplossingen op het kruispunt van techniek en digitaal.",
+    "p2": "Ik leer snel, itereren is mijn reflex, en ik koppel technologie aan sociale nuttigheid.",
     "goals": [
       "Stage elektronica/embedded",
       "Freelance webopdrachten",
@@ -48,50 +46,66 @@
     "title": "Projecten",
     "filterAll": "Alle",
     "filterWeb": "Web",
-    "filterIngWeb": "Engineering & web",
+    "filterInd": "Industrieel",
     "filterSoc": "Sociaal",
     "items": [
       {
         "title": "Mini Markt van Belgische Makers",
-        "desc": "Ontwikkeling van een platform dat kleine Belgische makers samenbrengt",
+        "desc": "Lokale platform dat makers en winkels in de kijker zet.",
         "tags": [
           "web"
         ]
       },
       {
         "title": "SuperWAAD",
-        "desc": "Volledige rebranding en website-revisie voor een lokale schrijnwerker",
+        "desc": "Webtool voor workshops en educatieve activiteiten.",
         "tags": [
-          "web"
+          "web",
+          "sociaal"
         ]
       },
       {
         "title": "Repair Café Asty-Moulin",
-        "desc": "Oprichting van een Repair Café op mijn secundaire school (Ashoka Belgium Young Changemaker)",
+        "desc": "Coördinatie en communicatie voor een Ashoka-initiatief.",
         "tags": [
           "sociaal"
         ]
       },
       {
-        "title": "Elektriciteitslab in Italië",
-        "desc": "Bouw van een Erasmus+ elektriciteitslab om jongeren op te leiden voor de banen van morgen",
+        "title": "Elektriciteitslab Erasmus+ (ISS Moretti)",
+        "desc": "Didactisch materiaal en metingen in het lab.",
         "tags": [
-          "ingweb",
+          "industrieel",
           "sociaal"
+        ]
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Tijdlijn",
+    "items": [
+      {
+        "title": "Studentenvertegenwoordiging",
+        "period": "2023–2025",
+        "bullets": [
+          "Bemiddeling",
+          "Evenementen"
         ]
       },
       {
-        "title": "Studentenraad",
-        "desc": "Inzet in de studentenvertegenwoordiging om studenten te ondersteunen",
-        "tags": [
-          "sociaal"
+        "title": "VZW-secretariaat",
+        "period": "2023–2024",
+        "bullets": [
+          "Documentbeheer",
+          "Interne processen"
         ]
       },
       {
-        "title": "Studentenorganisaties",
-        "desc": "Inzet voor debat, kritisch denken en solidariteit",
-        "tags": [
-          "sociaal"
+        "title": "Voorzitterschap studentenorganisatie",
+        "period": "2023–2024",
+        "bullets": [
+          "Teamleiding",
+          "Burgerprojecten"
         ]
       }
     ]
@@ -101,15 +115,15 @@
     "items": [
       {
         "title": "Samenwerkende WordPress-sites",
-        "desc": "Van idee tot live: helder design, geoptimaliseerde copy, training. Jij houdt de controle."
+        "desc": "Helder design, UX-copy, overdrachtstraining."
       },
       {
         "title": "Snelle statische sites",
-        "desc": "Supersnelle pagina’s (SEO, toegankelijkheid) binnen minuten op Plesk. Geen onderhoud."
+        "desc": "Performant, SEO, toegankelijk. Eenvoudige Plesk-deploy."
       },
       {
-        "title": "Embedded prototyping / Tech-advies",
-        "desc": "Elektronica, sensoren, webintegratie: ideeën worden meetbare proof-of-concepten."
+        "title": "Embedded prototyping / Techadvies",
+        "desc": "Elektronica, sensoren, webintegratie."
       }
     ],
     "ctaQuote": "Offerte aanvragen"
@@ -127,5 +141,9 @@
   "footer": {
     "rights": "© {year} Benjamin Reuland. Alle rechten voorbehouden.",
     "backToTop": "Naar boven"
+  },
+  "legal": {
+    "title": "Juridische vermeldingen",
+    "content": "Uitgever: Benjamin Reuland — Contact: contact@benjamin-reuland.be — Hosting: Plesk. Gegevens: verwerking uitsluitend om te antwoorden."
   }
 }

@@ -36,36 +36,31 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
-
   <header class="site-header" role="banner">
-    <div class="container header-inner grid-3">
+    <div class="container header-inner">
       <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
-
       <nav class="nav" aria-label="Navigation principale">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
-          <span class="sr-only">Ouvrir le menu</span>☰
-        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav"><span class="sr-only">Ouvrir le menu</span>☰</button>
         <ul id="primary-nav" class="nav-list">
           <li><a data-i18n="nav.home" href="#accueil">Accueil</a></li>
           <li><a data-i18n="nav.about" href="#a-propos">À propos</a></li>
           <li><a data-i18n="nav.skills" href="#competences">Compétences</a></li>
           <li><a data-i18n="nav.projects" href="#projets">Projets</a></li>
+          <li><a data-i18n="nav.timeline" href="#timeline">Timeline</a></li>
           <li><a data-i18n="nav.services" href="#services">Services</a></li>
           <li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
-          <li><a data-i18n="nav.legal" href="/legal.html">Mentions légales</a></li>
+          <li><a data-i18n="nav.legal" href="#mentions-legales">Mentions légales</a></li>
         </ul>
       </nav>
-
       <div class="header-actions">
         <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
-        <label for="langSelect" class="sr-only">Langue</label>
-        <select id="langSelect" class="lang-select" aria-label="Changer de langue">
-          <option value="fr" selected>FR</option>
-          <option value="en">EN</option>
-          <option value="de">DE</option>
-          <option value="nl">NL</option>
-          <option value="se">SE</option>
-        </select>
+        <div class="lang-switch" aria-label="Changer de langue">
+          <button class="lang-btn" data-lang="fr" aria-current="true">FR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="nl">NL</button>
+          <button class="lang-btn" data-lang="se">SE</button>
+        </div>
       </div>
     </div>
   </header>
@@ -75,7 +70,7 @@
       <canvas id="bg-canvas" aria-hidden="true"></canvas>
       <div class="container hero-inner">
         <h1 class="hero-title" data-i18n="hero.title">Ingénierie & Web, au service du réel.</h1>
-        <p class="hero-sub" data-i18n="hero.subtitle">Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour un monde meilleur</p>
+        <p class="hero-sub" data-i18n="hero.subtitle">Je suis un jeune étudiant en ingénierie industrielle, autoformé au web, engagé pour un monde meilleur.</p>
         <div class="hero-ctas">
           <a class="btn primary magnet" href="#projets" data-i18n="hero.ctaProjects">Voir mes projets</a>
           <a class="btn ghost magnet" href="#contact" data-i18n="hero.ctaContact">Me contacter</a>
@@ -86,16 +81,16 @@
     <section id="highlights" class="section" aria-label="Points clés">
       <div class="container cards-3">
         <article class="card">
-          <h3 data-i18n="highlights.student">Étudiant en ingénierie</h3>
-          <p data-i18n="highlights.studentDesc">J'étudie l’ingénierie industrielle à Liège, je me spécialise en électronique et systèmes embarqués.</p>
+          <h3 data-i18n="highlights.student">Étudiant Ingénieur</h3>
+          <p>Électronique & systèmes embarqués.</p>
         </article>
         <article class="card">
           <h3 data-i18n="highlights.dev">Développeur Web</h3>
-          <p data-i18n="highlights.devDesc">Je développe des sites web statiques, des boutiques en ligne et des pages performantes optimisées SEO.</p>
+          <p>Sites statiques rapides, WordPress, UX writing.</p>
         </article>
         <article class="card">
-          <h3 data-i18n="highlights.youth">Engagement sociétal</h3>
-          <p data-i18n="highlights.youthDesc">J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde.</p>
+          <h3 data-i18n="highlights.youth">Engagement Jeunesse</h3>
+          <p>Projets éducatifs et citoyens.</p>
         </article>
       </div>
     </section>
@@ -107,8 +102,8 @@
         </div>
         <div class="about-text">
           <h2 data-i18n="about.title">À propos</h2>
-          <p data-i18n="about.p1">Je m'appelle Benjamin. J’aime transformer des besoins concrets en solutions utiles : des interfaces claires, des systèmes embarqués fiables et des sites qui chargent vite.</p>
-          <p data-i18n="about.p2">Curieux et autonome, je construis vite des prototypes, je mesure, j’améliore. Mon fil rouge : apporter un impact réel — pour des associations, des artisans ou des projets éducatifs.</p>
+          <p data-i18n="about.p1">Je conçois des solutions simples et robustes, à mi-chemin entre l’ingénierie et le numérique.</p>
+          <p data-i18n="about.p2">J’apprends vite, j’itère et j’aime relier technologie et utilité sociale.</p>
           <ul class="goals">
             <li data-i18n="about.goals.0">Stage en électronique/embarqués</li>
             <li data-i18n="about.goals.1">Missions freelance web</li>
@@ -159,63 +154,75 @@
           <div class="filters" role="toolbar" aria-label="Filtres projets">
             <button class="chip is-active" data-filter="all" aria-pressed="true" data-i18n="projects.filterAll">Tous</button>
             <button class="chip" data-filter="web" aria-pressed="false" data-i18n="projects.filterWeb">Web</button>
-            <button class="chip" data-filter="ingweb" aria-pressed="false" data-i18n="projects.filterIngWeb">Ingénierie et web</button>
+            <button class="chip" data-filter="industriel" aria-pressed="false" data-i18n="projects.filterInd">Industriel</button>
             <button class="chip" data-filter="social" aria-pressed="false" data-i18n="projects.filterSoc">Social</button>
           </div>
         </div>
-
         <div class="grid projects-grid" id="projectsGrid">
           <article class="project-card" data-tags="web">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.0.title">Mini Marché des Créateurs belges</h3>
-            <p data-i18n="projects.items.0.desc">Développement d'une plateforme de mise en commun de petits créateurs belges</p>
+            <p data-i18n="projects.items.0.desc">Plateforme locale pour créateurs, mise en avant des boutiques.</p>
             <ul class="tag-list"><li>#web</li></ul>
           </article>
-
-          <article class="project-card" data-tags="web">
+          <article class="project-card" data-tags="web,social">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.1.title">SuperWAAD</h3>
-            <p data-i18n="projects.items.1.desc">Refonte complète de la charte graphique et du site web pour un ébéniste local</p>
-            <ul class="tag-list"><li>#web</li></ul>
+            <p data-i18n="projects.items.1.desc">Outil web pour ateliers et animations éducatives.</p>
+            <ul class="tag-list"><li>#web</li><li>#social</li></ul>
           </article>
-
           <article class="project-card" data-tags="social">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.2.title">Repair Café Asty-Moulin</h3>
-            <p data-i18n="projects.items.2.desc">Création d'un Repair Café dans mon enseignement secondaire (Young Changemaker Ashoka Belgium)</p>
+            <p data-i18n="projects.items.2.desc">Coordination et communication pour une initiative Ashoka.</p>
             <ul class="tag-list"><li>#social</li></ul>
           </article>
-
-          <article class="project-card" data-tags="ingweb,social">
+          <article class="project-card" data-tags="industriel,social">
             <div class="project-media" aria-hidden="true"></div>
-            <h3 data-i18n="projects.items.3.title">Construction d'un labo d'électricité en Italie</h3>
-            <p data-i18n="projects.items.3.desc">Construction d'un laboratoire d'électricité (Erasmus+) pour former aux métiers de demain</p>
-            <ul class="tag-list"><li>#ingénierie-web</li><li>#social</li></ul>
-          </article>
-
-          <article class="project-card" data-tags="social">
-            <div class="project-media" aria-hidden="true"></div>
-            <h3 data-i18n="projects.items.4.title">Conseil Étudiant</h3>
-            <p data-i18n="projects.items.4.desc">Investissement dans la représentation étudiante de mon EES pour accompagner les étudiants</p>
-            <ul class="tag-list"><li>#social</li></ul>
-          </article>
-
-          <article class="project-card" data-tags="social">
-            <div class="project-media" aria-hidden="true"></div>
-            <h3 data-i18n="projects.items.5.title">Organisations étudiantes</h3>
-            <p data-i18n="projects.items.5.desc">Engagement pour amener débat, esprit critique et solidarité auprès des étudiants</p>
-            <ul class="tag-list"><li>#social</li></ul>
+            <h3 data-i18n="projects.items.3.title">Lab électricité Erasmus+ (ISS Moretti)</h3>
+            <p data-i18n="projects.items.3.desc">Matériel pédagogique et mesures en laboratoire.</p>
+            <ul class="tag-list"><li>#industriel</li><li>#social</li></ul>
           </article>
         </div>
       </div>
     </section>
 
+    <section id="timeline" class="section" aria-label="Parcours">
+      <div class="container"><h2 data-i18n="timeline.title">Timeline</h2></div>
+      <ol class="timeline" aria-label="Frise chronologique">
+        <li class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-content">
+            <h3 data-i18n="timeline.items.0.title">Représentation étudiante</h3>
+            <span class="tl-period" data-i18n="timeline.items.0.period">2023–2025</span>
+            <ul><li data-i18n="timeline.items.0.bullets.0">Médiation</li><li data-i18n="timeline.items.0.bullets.1">Organisation d’événements</li></ul>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-content">
+            <h3 data-i18n="timeline.items.1.title">Secrétariat ASBL</h3>
+            <span class="tl-period" data-i18n="timeline.items.1.period">2023–2024</span>
+            <ul><li data-i18n="timeline.items.1.bullets.0">Gestion documents</li><li data-i18n="timeline.items.1.bullets.1">Processus internes</li></ul>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-dot" aria-hidden="true"></div>
+          <div class="tl-content">
+            <h3 data-i18n="timeline.items.2.title">Présidence organisation étudiante</h3>
+            <span class="tl-period" data-i18n="timeline.items.2.period">2023–2024</span>
+            <ul><li data-i18n="timeline.items.2.bullets.0">Pilotage d’équipe</li><li data-i18n="timeline.items.2.bullets.1">Projets citoyens</li></ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
     <section id="services" class="section" aria-label="Services">
       <div class="container cards-3">
         <h2 class="full" data-i18n="services.title">Services</h2>
-        <article class="card"><h3 data-i18n="services.items.0.title">Sites WordPress collaboratifs</h3><p data-i18n="services.items.0.desc">De l’idée au site livré : design clair, contenus optimisés, formation à la prise en main. Vous repartez autonome.</p></article>
-        <article class="card"><h3 data-i18n="services.items.1.title">Sites statiques rapides</h3><p data-i18n="services.items.1.desc">Pages ultra-performantes (SEO, accessibilité) déployées en quelques minutes sur Plesk. Zéro maintenance.</p></article>
-        <article class="card"><h3 data-i18n="services.items.2.title">Prototypage embarqué / Conseil tech</h3><p data-i18n="services.items.2.desc">Électronique, capteurs, intégration web : je fais décoller vos idées avec des preuves de concept mesurables.</p></article>
+        <article class="card"><h3 data-i18n="services.items.0.title">Sites WordPress collaboratifs</h3><p data-i18n="services.items.0.desc">Design clair, rédaction UX, formation à la prise en main.</p></article>
+        <article class="card"><h3 data-i18n="services.items.1.title">Sites statiques rapides</h3><p data-i18n="services.items.1.desc">Performance, SEO, accessibilité. Déploiement simple sur Plesk.</p></article>
+        <article class="card"><h3 data-i18n="services.items.2.title">Prototypage embarqué / Conseil tech</h3><p data-i18n="services.items.2.desc">Électronique, capteurs, intégration web.</p></article>
         <div class="full"><a class="btn secondary magnet" href="#contact" data-i18n="services.ctaQuote">Demander un devis</a></div>
       </div>
     </section>
@@ -244,6 +251,17 @@
           <div class="actions"><button class="btn primary magnet" type="submit" data-i18n="contact.send">Envoyer</button></div>
           <p role="status" class="form-msg" aria-live="polite"></p>
         </form>
+        <p class="socials">
+          <a href="https://github.com/benjaminreuland" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/benjaminreuland" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="mentions-legales" class="section legal" aria-label="Mentions légales">
+      <div class="container">
+        <h2 data-i18n="legal.title">Mentions légales</h2>
+        <p data-i18n="legal.content">Éditeur : Benjamin Reuland — Contact : contact@benjamin-reuland.be — Hébergement : Plesk. Données : formulaires traités aux seules fins de réponse.</p>
       </div>
     </section>
   </main>
@@ -254,7 +272,6 @@
         <a href="#accueil" data-i18n="nav.home">Accueil</a>
         <a href="#a-propos" data-i18n="nav.about">À propos</a>
         <a href="#contact" data-i18n="nav.contact">Contact</a>
-        <a href="/legal.html" data-i18n="nav.legal">Mentions légales</a>
       </nav>
       <a class="back-top" href="#accueil" data-i18n="footer.backToTop">Haut de page</a>
       <p class="rights" data-i18n="footer.rights">© <span id="year"></span> Benjamin Reuland. Tous droits réservés.</p>
