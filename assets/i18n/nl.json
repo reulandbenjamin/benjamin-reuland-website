@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Benjamin Reuland — Ingenieurschap & web",
+    "description": "Student industrieel ingenieur (elektronica/embedded) en webontwikkelaar. Concrete projecten, echte impact."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Over",
+    "skills": "Vaardigheden",
+    "projects": "Projecten",
+    "timeline": "Tijdlijn",
+    "services": "Diensten",
+    "contact": "Contact",
+    "legal": "Juridisch"
+  },
+  "hero": {
+    "title": "Ingenieurschap & web, in dienst van het echte.",
+    "subtitle": "Ik ben student industrieel ingenieur, autodidact in het web, en geëngageerd voor een betere wereld.",
+    "ctaProjects": "Bekijk mijn projecten",
+    "ctaContact": "Contact opnemen"
+  },
+  "highlights": {
+    "student": "Ingenieursstudent",
+    "dev": "Webontwikkelaar",
+    "youth": "Jeugdengagement"
+  },
+  "about": {
+    "title": "Over",
+    "p1": "Ik ontwerp eenvoudige, robuuste oplossingen op het kruispunt van techniek en digitaal.",
+    "p2": "Ik leer snel, itereren is mijn reflex, en ik koppel technologie aan sociale nuttigheid.",
+    "goals": [
+      "Stage elektronica/embedded",
+      "Freelance webopdrachten",
+      "Educatieve partnerschappen",
+      "Burgerprojecten"
+    ]
+  },
+  "skills": {
+    "title": "Vaardigheden",
+    "langs": "Talen",
+    "tools": "Tools",
+    "soft": "Soft skills",
+    "srLevel": "{label}: niveau {value}/5"
+  },
+  "projects": {
+    "title": "Projecten",
+    "filterAll": "Alle",
+    "filterWeb": "Web",
+    "filterInd": "Industrieel",
+    "filterSoc": "Sociaal",
+    "items": [
+      {
+        "title": "Mini Markt van Belgische Makers",
+        "desc": "Lokale platform dat makers en winkels in de kijker zet.",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "SuperWAAD",
+        "desc": "Webtool voor workshops en educatieve activiteiten.",
+        "tags": [
+          "web",
+          "sociaal"
+        ]
+      },
+      {
+        "title": "Repair Café Asty-Moulin",
+        "desc": "Coördinatie en communicatie voor een Ashoka-initiatief.",
+        "tags": [
+          "sociaal"
+        ]
+      },
+      {
+        "title": "Elektriciteitslab Erasmus+ (ISS Moretti)",
+        "desc": "Didactisch materiaal en metingen in het lab.",
+        "tags": [
+          "industrieel",
+          "sociaal"
+        ]
+      }
+    ]
+  },
+  "timeline": {
+    "title": "Tijdlijn",
+    "items": [
+      {
+        "title": "Studentenvertegenwoordiging",
+        "period": "2023–2025",
+        "bullets": [
+          "Bemiddeling",
+          "Evenementen"
+        ]
+      },
+      {
+        "title": "VZW-secretariaat",
+        "period": "2023–2024",
+        "bullets": [
+          "Documentbeheer",
+          "Interne processen"
+        ]
+      },
+      {
+        "title": "Voorzitterschap studentenorganisatie",
+        "period": "2023–2024",
+        "bullets": [
+          "Teamleiding",
+          "Burgerprojecten"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Diensten",
+    "items": [
+      {
+        "title": "Samenwerkende WordPress-sites",
+        "desc": "Helder design, UX-copy, overdrachtstraining."
+      },
+      {
+        "title": "Snelle statische sites",
+        "desc": "Performant, SEO, toegankelijk. Eenvoudige Plesk-deploy."
+      },
+      {
+        "title": "Embedded prototyping / Techadvies",
+        "desc": "Elektronica, sensoren, webintegratie."
+      }
+    ],
+    "ctaQuote": "Offerte aanvragen"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Naam",
+    "email": "E-mail",
+    "message": "Bericht",
+    "consent": "Ik ga ermee akkoord dat mijn gegevens worden gebruikt om mij te contacteren (AVG).",
+    "send": "Versturen",
+    "success": "Bedankt! Je bericht is verzonden.",
+    "error": "Oeps, er ging iets mis. Probeer opnieuw."
+  },
+  "footer": {
+    "rights": "© {year} Benjamin Reuland. Alle rechten voorbehouden.",
+    "backToTop": "Naar boven"
+  },
+  "legal": {
+    "title": "Juridische vermeldingen",
+    "content": "Uitgever: Benjamin Reuland — Contact: contact@benjamin-reuland.be — Hosting: Plesk. Gegevens: verwerking uitsluitend om te antwoorden."
+  }
+}
