@@ -46,7 +46,9 @@
       <nav class="nav" aria-label="Navigation principale">
         <!-- Burger Strawberry -->
         <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
-          <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
+          <span class="line l1"></span>
+          <span class="line l2"></span>
+          <span class="line l3"></span>
         </button>
 
         <ul id="primary-nav" class="nav-list">
@@ -56,6 +58,7 @@
           <li><a data-i18n="nav.projects" href="#projets">Projets</a></li>
           <li><a data-i18n="nav.services" href="#services">Services</a></li>
           <li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
+          <li><a data-i18n="nav.legal" href="/legal.html">Mentions légales</a></li>
         </ul>
       </nav>
 
@@ -116,8 +119,8 @@
         </div>
         <div class="about-text">
           <h2 data-i18n="about.title">À propos</h2>
-          <p data-i18n="about.p1">Je conçois et assemble des choses utiles. Côté ingénierie&nbsp;: électronique et systèmes embarqués pragmatiques. Côté web&nbsp;: interfaces sobres, accessibles et rapides.</p>
-          <p data-i18n="about.p2">J’aime aller vite au prototype, mesurer, puis itérer. Mon but&nbsp;: livrer des solutions propres, documentées et faciles à maintenir — surtout pour des assos, artisans et projets éducatifs.</p>
+          <p data-i18n="about.p1">Je m'appelle Benjamin. J’aime transformer des besoins concrets en solutions utiles : des interfaces claires, des systèmes embarqués fiables et des sites qui chargent vite.</p>
+          <p data-i18n="about.p2">Curieux et autonome, je construis vite des prototypes, je mesure, j’améliore. Mon fil rouge : apporter un impact réel — pour des associations, des artisans ou des projets éducatifs.</p>
           <ul class="goals">
             <li data-i18n="about.goals.0">Stage en électronique/embarqués</li>
             <li data-i18n="about.goals.1">Missions freelance web</li>
@@ -177,43 +180,43 @@
         </div>
 
         <div class="grid projects-grid" id="projectsGrid">
-          <article class="project-card" data-tags="web" data-title="Mini Marché des Créateurs belges" data-desc="Plateforme mutualisée pour petits créateurs belges : fiches produits propres, panier simple et flows de publication allégés. Focus sur la performance (static-first), l’accessibilité et la gouvernance collective." >
-            <div class="project-media" data-label="MMC" aria-hidden="true"></div>
+          <article class="project-card" data-tags="web" data-detail="Plateforme de créateurs : agrégation catalogue, filtres, fiches vendeurs, paiement hors-ligne (MVP).">
+            <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.0.title">Mini Marché des Créateurs belges</h3>
             <p data-i18n="projects.items.0.desc">Développement d'une plateforme de mise en commun de petits créateurs belges</p>
             <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="web" data-title="SuperWAAD" data-desc="Refonte identitaire d’un ébéniste : palette, logo, composants UI et site vitrine prêt à évoluer vers un catalogue. Emphase sur la clarté du devis et la prise de contact en 2 étapes." >
-            <div class="project-media" data-label="SW" aria-hidden="true"></div>
+          <article class="project-card" data-tags="web" data-detail="Refonte identité + site vitrine optimisé Core Web Vitals, tunnel de prise de contact simplifié.">
+            <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.1.title">SuperWAAD</h3>
             <p data-i18n="projects.items.1.desc">Refonte complète de la charte graphique et du site web pour un ébéniste local</p>
             <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="social" data-title="Repair Café Asty-Moulin" data-desc="Montage du Repair Café au sein de l’établissement : organisation, sécurité, communication interne. Objectif : transmettre de la débrouille technique et retarder la mise au rebut du matériel." >
-            <div class="project-media" data-label="RCA" aria-hidden="true"></div>
+          <article class="project-card" data-tags="social" data-detail="Création, animation et pérennisation d’un Repair Café scolaire (process, outils, communication).">
+            <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.2.title">Repair Café Asty-Moulin</h3>
             <p data-i18n="projects.items.2.desc">Création d'un Repair Café dans mon enseignement secondaire (Young Changemaker Ashoka Belgium)</p>
             <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="ingweb,social" data-title="Labo d’électricité (Italie)" data-desc="Construction d’un laboratoire d’électricité dans un lycée partenaire (Erasmus+) : conception postes, sécurité basse tension, supports pédagogiques et passation aux équipes locales." >
-            <div class="project-media" data-label="LAB" aria-hidden="true"></div>
+          <article class="project-card" data-tags="ingweb,social" data-detail="Montage labo d’électricité (Erasmus+) : postes sécurisé́s, instrumentation, ressources pédagogiques.">
+            <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.3.title">Construction d'un labo d'électricité en Italie</h3>
             <p data-i18n="projects.items.3.desc">Construction d'un laboratoire d'électricité (Erasmus+) pour former aux métiers de demain</p>
             <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="social" data-title="Conseil Étudiant" data-desc="Accompagnement des étudiants : écoute, représentation et amélioration continue des dispositifs internes. Mise en place d’outils simples de suivi et d’information." >
-            <div class="project-media" data-label="CE" aria-hidden="true"></div>
+          <article class="project-card" data-tags="social" data-detail="Accompagnement des étudiants (représentation, médiation, événements, amélioration continue).">
+            <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.4.title">Conseil Étudiant</h3>
             <p data-i18n="projects.items.4.desc">Investissement dans la représentation étudiante de mon EES pour accompagner les étudiants</p>
             <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="social" data-title="Organisations étudiantes" data-desc="Animation de débats, ateliers d’esprit critique et actions solidaires. Fabrication de supports (communications, sites) et transmission de méthodes." >
-            <div class="project-media" data-label="ORG" aria-hidden="true"></div>
+          <article class="project-card" data-tags="social" data-detail="Mise en place d’initiatives pour l’esprit critique, le débat et la solidarité étudiante.">
+            <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.5.title">Organisations étudiantes</h3>
             <p data-i18n="projects.items.5.desc">Engagement pour amener débat, esprit critique et solidarité auprès des étudiants</p>
             <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
@@ -221,83 +224,47 @@
         </div>
       </div>
     </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section" aria-label="Services">
-      <div class="container cards-3">
-        <h2 class="full" data-i18n="services.title">Services</h2>
-        <article class="card"><h3 data-i18n="services.items.0.title">Sites WordPress collaboratifs</h3><p data-i18n="services.items.0.desc">De l’idée au site livré : design clair, contenus optimisés, formation à la prise en main. Vous repartez autonome.</p></article>
-        <article class="card"><h3 data-i18n="services.items.1.title">Sites statiques rapides</h3><p data-i18n="services.items.1.desc">Pages ultra-performantes (SEO, accessibilité) déployées en quelques minutes sur Plesk. Zéro maintenance.</p></article>
-        <article class="card"><h3 data-i18n="services.items.2.title">Prototypage embarqué / Conseil tech</h3><p data-i18n="services.items.2.desc">Électronique, capteurs, intégration web : je fais décoller vos idées avec des preuves de concept mesurables.</p></article>
-        <div class="full"><a class="btn secondary magnet" href="#contact" data-i18n="services.ctaQuote">Demander un devis</a></div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section" aria-label="Contact">
-      <div class="container">
-        <h2 data-i18n="contact.title">Contact</h2>
-        <form id="contactForm" class="contact-form" novalidate>
-          <div class="form-field">
-            <label for="name" data-i18n="contact.name">Nom</label>
-            <input id="name" name="name" autocomplete="name" required />
-          </div>
-          <div class="form-field">
-            <label for="email" data-i18n="contact.email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-          <div class="form-field full">
-            <label for="message" data-i18n="contact.message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          
-          <div class="consent">
-            <input id="consent" type="checkbox" required />
-            <label for="consent" data-i18n="contact.consent">J’accepte que mes données soient utilisées pour me recontacter (RGPD).</label>
-          </div>
-          <div class="actions"><button class="btn primary magnet" type="submit" data-i18n="contact.send">Envoyer</button></div>
-          <p role="status" class="form-msg" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
   </main>
-
-  <!-- MODAL PROJETS -->
-  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal-backdrop"></div>
-    <div class="modal-dialog" role="document" aria-labelledby="projectTitle">
-      <button class="modal-close" aria-label="Fermer">×</button>
-      <h3 id="projectTitle"></h3>
-      <p id="projectDesc"></p>
-      <div class="modal-actions">
-        <button class="btn secondary modal-close-2">Fermer</button>
-      </div>
-    </div>
-  </div>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
+      <nav aria-label="Pied de page">
+        <a href="#accueil" data-i18n="nav.home">Accueil</a>
+        <a href="#a-propos" data-i18n="nav.about">À propos</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="/legal.html" data-i18n="nav.legal">Mentions légales</a>
+      </nav>
+
+      <!-- Icônes SVG (couleur = currentColor) -->
       <div class="socials" aria-label="Réseaux sociaux">
-        <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noreferrer noopener" class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.86 6.48 1.86 12.07c0 4.99 3.66 9.13 8.45 9.95v-7.04H7.9v-2.9h2.4V9.86c0-2.37 1.41-3.68 3.56-3.68 1.03 0 2.1.18 2.1.18v2.31h-1.18c-1.16 0-1.52.72-1.52 1.46v1.75h2.58l-.41 2.9h-2.17v7.04c4.79-.82 8.45-4.96 8.45-9.95z"/></svg>
+        <a href="#" aria-label="Facebook" class="iconlink">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8v-1.9c0-.9.3-1.5 1.6-1.5H16V4.1c-.3 0-1.2-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.7V11H8v3h2.4v7h3.1z"/></svg>
         </a>
-        <a href="#" aria-label="Instagram" class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm6.2-.9a1.1 1.1 0 1 0 1.1 1.1 1.1 1.1 0 0 0-1.1-1.1z"/></svg>
+        <a href="#" aria-label="Instagram" class="iconlink">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" ry="4"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg>
         </a>
-        <a href="#" aria-label="LinkedIn" class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4zM8.5 8.5h3.8v2h.05c.53-1 1.84-2 3.8-2 4.06 0 4.8 2.67 4.8 6.15V23h-4v-5.3c0-1.26 0-2.9-1.77-2.9s-2.04 1.38-2.04 2.8V23h-4z"/></svg>
+        <a href="#" aria-label="LinkedIn" class="iconlink">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="6.5" y="10" width="2.5" height="7"/><circle cx="7.7" cy="7.2" r="1.2"/><path d="M12 10h2.4v1a3 3 0 0 1 2.6-1.1c2 0 3 1.1 3 3.4V17h-2.5v-3.1c0-1.2-.4-1.9-1.4-1.9-1 0-1.6.7-1.6 2V17H12z"/></svg>
         </a>
-        <a href="mailto:prenom.nom@etud.ecole.be" aria-label="Email scolaire" class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2zM3 6v.5l9 6 9-6V6z"/></svg>
+        <a href="mailto:prenom.nom@etud.ecole.be" aria-label="Email scolaire" class="iconlink">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
         </a>
       </div>
 
       <a class="back-top" href="#accueil" data-i18n="footer.backToTop">Haut de page</a>
-
       <p class="rights" data-i18n="footer.rights">© <span id="year"></span> Benjamin Reuland. Tous droits réservés.</p>
     </div>
   </footer>
+
+  <!-- MODAL Projets -->
+  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="backdrop" data-close></div>
+    <div class="dialog" role="document">
+      <button class="close" aria-label="Fermer" data-close>✕</button>
+      <h3 class="modal-title"></h3>
+      <p class="modal-desc"></p>
+    </div>
+  </div>
 
   <div id="cursor" aria-hidden="true"></div>
   <script>window.FORMSPREE_ENDPOINT="";</script>

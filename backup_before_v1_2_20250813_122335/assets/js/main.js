@@ -35,7 +35,7 @@ async function loadI18n(lang){
     const res=await fetch(`/assets/i18n/${lang}.json`,{cache:'no-store'});
     const dict=await res.json();
     document.title=dict.meta?.title||document.title;
-    const metaDesc=document.querySelector('meta[name="description"]'); metaDesc?.setAttribute('content',dict.meta?.description||metaDesc?.content||'');
+    const metaDesc=document.querySelector('meta[name="description"]'); if(dict.meta?.description) metaDesc?.setAttribute('content',dict.meta.description);
     $$('[data-i18n]').forEach(el=>{
       const key=el.getAttribute('data-i18n');
       const value=key.split('.').reduce((a,k)=>a?.[k],dict);
@@ -46,21 +46,21 @@ async function loadI18n(lang){
 }
 loadI18n(currentLang);
 
-/* HERO → rendre ~90% des cartes visibles au premier écran (desktop) */
-function adjustHeroGap(){
+/* HERO → afficher ~90% de la première carte au 1er écran
+   → on ajuste dynamiquement la min-height du hero (au lieu d'ajouter du padding) */
+function adjustHeroLayout(){
   const hero=$('.hero'); const highlights=$('#highlights');
   if(!hero || !highlights) return;
   const headerH=$('.site-header')?.offsetHeight||0;
   const firstCard=$('#highlights .card'); if(!firstCard) return;
   const cardH=firstCard.offsetHeight;
   const vh=window.innerHeight;
-  const desiredTop = Math.max(0, vh - 0.9*cardH - headerH); // position cible du début de #highlights
-  const heroH = hero.offsetHeight;
-  const shift = Math.max(0, heroH - desiredTop);
-  highlights.style.marginTop = `-${Math.round(shift)}px`; // chevauchement vers le haut
+  const target = Math.max(320, vh - 0.9*cardH - headerH); // 90% visibles
+  hero.style.minHeight = `${Math.round(target)}px`;
+  hero.style.setProperty('--hero-pad-bottom','0px');
 }
-window.addEventListener('load', adjustHeroGap);
-window.addEventListener('resize', adjustHeroGap);
+window.addEventListener('load', adjustHeroLayout);
+window.addEventListener('resize', adjustHeroLayout);
 
 /* CANVAS PARTICLES (pause si reduce motion) */
 const prefersReduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -93,7 +93,7 @@ $$('.magnet').forEach(el=>{
   el.addEventListener('mouseleave',()=> el.style.transform='translate(0,0)');
 });
 
-/* PROJETS — filtres fluides + modal */
+/* PROJETS — filtres fluides (fade/scale + collapse) */
 const grid=$('#projectsGrid'); const chips=$$('.chip');
 chips.forEach(btn=>btn.addEventListener('click',()=>{
   chips.forEach(c=>{ c.classList.remove('is-active'); c.setAttribute('aria-pressed','false'); });
@@ -106,36 +106,37 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
       card.classList.remove('is-hidden'); card.style.opacity='1'; card.style.transform='scale(1)';
     }else{
       card.style.opacity='0'; card.style.transform='scale(.98)';
-      setTimeout(()=> card.classList.add('is-hidden'), 160);
+      setTimeout(()=> card.classList.add('is-hidden'), 180);
     }
   });
 }));
 
-/* Modal logic */
+/* MODAL projets (ouvre sur "Voir le projet", empêche # de remonter en haut) */
 const modal=$('#projectModal');
-const mTitle=$('#projectTitle');
-const mDesc=$('#projectDesc');
-function openModal(title,desc){
-  mTitle.textContent=title;
-  mDesc.textContent=desc;
-  modal.classList.add('active');
+const modalTitle=$('.modal-title', modal);
+const modalDesc=$('.modal-desc', modal);
+function openModal(title, desc){
+  modalTitle.textContent = title || '';
+  modalDesc.textContent = desc || '';
+  modal.classList.add('is-open');
+  document.body.classList.add('modal-open');
   document.body.style.overflow='hidden';
 }
 function closeModal(){
-  modal.classList.remove('active');
+  modal.classList.remove('is-open');
+  document.body.classList.remove('modal-open');
   document.body.style.overflow='';
 }
-modal?.addEventListener('click',e=>{
-  if(e.target.classList.contains('modal-backdrop')||e.target.classList.contains('modal-close')||e.target.classList.contains('modal-close-2')) closeModal();
-});
-window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
-
-grid?.addEventListener('click',e=>{
-  const a=e.target.closest('.overlay');
-  if(!a) return;
-  e.preventDefault();
-  const card=a.closest('.project-card');
-  openModal(card?.dataset.title||'Projet', card?.dataset.desc||'Détails à venir.');
+modal?.addEventListener('click',(e)=>{ if(e.target.hasAttribute('data-close')) closeModal(); });
+window.addEventListener('keydown',e=>{ if(e.key==='Escape' && modal.classList.contains('is-open')) closeModal(); });
+$$('.project-card .overlay').forEach(a=>{
+  a.addEventListener('click',(e)=>{
+    e.preventDefault();
+    const card=e.currentTarget.closest('.project-card');
+    const title=$('h3',card)?.textContent||'Projet';
+    const detail=card?.dataset?.detail||$('p',card)?.textContent||'';
+    openModal(title, detail);
+  });
 });
 
 /* CONTACT — Formspree + hCaptcha (optionnels) */
@@ -148,6 +149,7 @@ form?.addEventListener('submit',async e=>{
 
   if(FORMSPREE){
     try{
+      // hCaptcha si présent
       if(window.hcaptcha){
         const token=hcaptcha.getResponse();
         if(!token){ statusEl.textContent='Veuillez compléter le Captcha.'; return; }
@@ -164,7 +166,7 @@ form?.addEventListener('submit',async e=>{
   }
 });
 
-/* CURSOR custom (desktop only) */
+/* CURSOR custom */
 const cursor=$('#cursor'); const coarse=window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(cursor && !coarse && !reduce){
