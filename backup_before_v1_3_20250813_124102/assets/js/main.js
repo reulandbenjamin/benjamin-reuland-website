@@ -34,8 +34,8 @@ async function loadI18n(lang){
   try{
     const res=await fetch(`/assets/i18n/${lang}.json`,{cache:'no-store'});
     const dict=await res.json();
-    document.title=dict.meta.title;
-    const metaDesc=document.querySelector('meta[name="description"]'); metaDesc?.setAttribute('content',dict.meta.description);
+    document.title=dict.meta?.title||document.title;
+    const metaDesc=document.querySelector('meta[name="description"]'); metaDesc?.setAttribute('content',dict.meta?.description||metaDesc?.content||'');
     $$('[data-i18n]').forEach(el=>{
       const key=el.getAttribute('data-i18n');
       const value=key.split('.').reduce((a,k)=>a?.[k],dict);
@@ -46,7 +46,7 @@ async function loadI18n(lang){
 }
 loadI18n(currentLang);
 
-/* HERO → rendre 90% des cartes visibles au premier écran */
+/* HERO → rendre ~90% des cartes visibles au premier écran (desktop) */
 function adjustHeroGap(){
   const hero=$('.hero'); const highlights=$('#highlights');
   if(!hero || !highlights) return;
@@ -54,12 +54,13 @@ function adjustHeroGap(){
   const firstCard=$('#highlights .card'); if(!firstCard) return;
   const cardH=firstCard.offsetHeight;
   const vh=window.innerHeight;
-  const desiredTop = Math.max(0, vh - 0.9*cardH - headerH);
-  hero.style.setProperty('--hero-pad-bottom', `${Math.round(desiredTop)}px`);
+  const desiredTop = Math.max(0, vh - 0.9*cardH - headerH); // position cible du début de #highlights
+  const heroH = hero.offsetHeight;
+  const shift = Math.max(0, heroH - desiredTop);
+  highlights.style.marginTop = `-${Math.round(shift)}px`; // chevauchement vers le haut
 }
 window.addEventListener('load', adjustHeroGap);
 window.addEventListener('resize', adjustHeroGap);
-document.fonts?.ready?.then(adjustHeroGap);
 
 /* CANVAS PARTICLES (pause si reduce motion) */
 const prefersReduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -92,7 +93,7 @@ $$('.magnet').forEach(el=>{
   el.addEventListener('mouseleave',()=> el.style.transform='translate(0,0)');
 });
 
-/* PROJETS — filtres fluides (fade/scale + collapse) */
+/* PROJETS — filtres fluides + modal */
 const grid=$('#projectsGrid'); const chips=$$('.chip');
 chips.forEach(btn=>btn.addEventListener('click',()=>{
   chips.forEach(c=>{ c.classList.remove('is-active'); c.setAttribute('aria-pressed','false'); });
@@ -105,29 +106,44 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
       card.classList.remove('is-hidden'); card.style.opacity='1'; card.style.transform='scale(1)';
     }else{
       card.style.opacity='0'; card.style.transform='scale(.98)';
-      setTimeout(()=> card.classList.add('is-hidden'), 180);
+      setTimeout(()=> card.classList.add('is-hidden'), 160);
     }
   });
 }));
 
-/* PROJETS — modal */
-const modal=$('#projectModal'); const modalTitle=$('#modalTitle'); const modalBody=$('#modalBody');
-$$('.open-project').forEach(a=>a.addEventListener('click',(e)=>{
+/* Modal logic */
+const modal=$('#projectModal');
+const mTitle=$('#projectTitle');
+const mDesc=$('#projectDesc');
+function openModal(title,desc){
+  mTitle.textContent=title;
+  mDesc.textContent=desc;
+  modal.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  modal.classList.remove('active');
+  document.body.style.overflow='';
+}
+modal?.addEventListener('click',e=>{
+  if(e.target.classList.contains('modal-backdrop')||e.target.classList.contains('modal-close')||e.target.classList.contains('modal-close-2')) closeModal();
+});
+window.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+grid?.addEventListener('click',e=>{
+  const a=e.target.closest('.overlay');
+  if(!a) return;
   e.preventDefault();
-  modalTitle.textContent=a.dataset.title||'Projet';
-  modalBody.textContent=a.dataset.desc||'Détails prochainement.';
-  modal.removeAttribute('hidden'); document.body.style.overflow='hidden';
-}));
-modal?.addEventListener('click',(e)=>{ if(e.target.dataset.close) closeModal(); });
-function closeModal(){ modal.setAttribute('hidden',''); document.body.style.overflow=''; }
-window.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && !modal.hasAttribute('hidden')) closeModal(); });
+  const card=a.closest('.project-card');
+  openModal(card?.dataset.title||'Projet', card?.dataset.desc||'Détails à venir.');
+});
 
 /* CONTACT — Formspree + hCaptcha (optionnels) */
 const FORMSPREE=window.FORMSPREE_ENDPOINT||"";
 const form=$('#contactForm'); const statusEl=$('.form-msg');
 form?.addEventListener('submit',async e=>{
   e.preventDefault(); statusEl.textContent='';
-  if(form.company?.value) return;
+  if(form.company?.value) return; // honeypot
   const data=new FormData(form);
 
   if(FORMSPREE){
@@ -148,7 +164,7 @@ form?.addEventListener('submit',async e=>{
   }
 });
 
-/* CURSOR custom */
+/* CURSOR custom (desktop only) */
 const cursor=$('#cursor'); const coarse=window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(cursor && !coarse && !reduce){
