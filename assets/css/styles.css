@@ -107,7 +107,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 }
 
 /* empilement régulier des 3 barres */
-.nav-toggle.strawberry .line + .line{ margin-top:0px; }
+.nav-toggle.strawberry .line + .line{ margin-top:3px; }
 
 /* état FERMÉ : strawberry (barres de longueur différente) */
 .nav-toggle.strawberry .l1{ width:24px; }
