@@ -85,7 +85,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .nav-list{display:none;list-style:none;margin:0;padding:0;align-items:center}
 .nav-list a{display:flex;align-items:center;line-height:1;padding:.4rem .6rem;border-radius:9999px;white-space:nowrap;font-size:clamp(.92rem, 1.1vw, 1rem);}
 .nav-list a:hover{background:color-mix(in srgb, var(--card), transparent 40%)}
-.nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:34px;height:30px}
+.nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:40px;height:30px;margin-left:6px}
 
 /* Strawberry → X : hamburger effilé fermé, croix symétrique ouverte */
 .nav-toggle.strawberry{
@@ -117,14 +117,14 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 /* état OUVERT : croix centrée, barres = mêmes longueurs */
 .nav-open .nav-toggle.strawberry .l1{
   width:15px;
-  transform: translateY(15px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
 }
 .nav-open .nav-toggle.strawberry .l2{
   opacity:0;
 }
 .nav-open .nav-toggle.strawberry .l3{
   width:15px;
-  transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-11px) rotate(-45deg);
 }
 
 .header-actions{display:flex;align-items:center;gap:.5rem;justify-self:end;margin-right:6px}
