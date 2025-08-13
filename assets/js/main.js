@@ -65,7 +65,6 @@ window.addEventListener('resize', adjustHeroHeight);
 /* CANVAS PARTICLES — animés partout, interactions desktop */
 const canvas=$('#bg-canvas');
 if(canvas){
-
   let desktop=window.matchMedia('(min-width: 900px)').matches;
   const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx=canvas.getContext('2d'); let w,h,particles=[]; const pointer={x:0,y:0,active:false};
@@ -74,7 +73,6 @@ if(canvas){
   function resize(){
     desktop=window.matchMedia('(min-width: 900px)').matches;
     w=canvas.clientWidth; h=canvas.clientHeight; canvas.width=w; canvas.height=h;
-    init(desktop?64:28);
   }
   function drawFrame(){
     ctx.clearRect(0,0,w,h);
@@ -87,18 +85,27 @@ if(canvas){
       ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(189,205,207,.85)'; ctx.fill();
     }
   }
+  resize();
+  init(desktop?64:28);
+  drawFrame();
+  function loop(){ drawFrame(); requestAnimationFrame(loop); }
+  if(!reduce) requestAnimationFrame(loop);
 
-  function init(n){ particles=Array.from({length:n},()=>({x:rand(0,w),y:rand(0,h),vx:rand(-.25,.25),vy:rand(-.25,.25),r:rand(1.2,2.2)})); }
-  resize(); init(desktop?64:28); drawFrame();
-  if(desktop && !reduce){
-    canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect(); pointer.x=e.clientX-r.left; pointer.y=e.clientY-r.top; pointer.active=true;});
-    canvas.addEventListener('pointerleave',()=>{pointer.active=false;});
-    (function loop(){ drawFrame(); requestAnimationFrame(loop); })();
-    window.addEventListener('resize',()=>{ resize(); init(64); });
-  }else{
-    window.addEventListener('resize',()=>{ resize(); drawFrame(); });
-  }
+  canvas.addEventListener('pointermove',e=>{
+    if(!desktop || reduce) return;
+    const r=canvas.getBoundingClientRect(); pointer.x=e.clientX-r.left; pointer.y=e.clientY-r.top; pointer.active=true;
+  });
+  canvas.addEventListener('pointerleave',()=>{pointer.active=false;});
 
+  let lastWidth=window.innerWidth;
+  window.addEventListener('resize',()=>{
+    const wNew=window.innerWidth;
+    resize();
+    if(wNew!==lastWidth){
+      lastWidth=wNew;
+      init(desktop?64:28);
+    }
+  });
 }
 
 /* MAGNET */
@@ -144,7 +151,7 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
     }else{
       card.style.opacity='0';
       card.style.transform='scale(.96)';
-      setTimeout(()=> card.classList.add('is-hidden'), 320);
+      setTimeout(()=> card.classList.add('is-hidden'), 500);
     }
   });
 }));
