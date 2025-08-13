@@ -73,7 +73,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 /* Strawberry → X */
 .nav-toggle.strawberry .line{display:block;height:2px;background:currentColor;border-radius:2px;transition:transform var(--dur-fast) var(--ease-smooth),opacity var(--dur-fast);width:24px}
-.nav-toggle.strawberry .line + .line{margin-top:4px}
+.nav-toggle.strawberry .line + .line{margin-top:3px}
 .nav-toggle.strawberry .l1{width:24px}
 .nav-toggle.strawberry .l2{width:16px}
 .nav-toggle.strawberry .l3{width:10px}
@@ -87,7 +87,8 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 /* Desktop layout */
 @media (min-width: 900px){
   .header-inner.grid-3{grid-template-columns:auto 1fr auto}
-  .logo{justify-self:start}
+  .logo{grid-column:1;justify-self:start}
+  .nav{grid-column:2;justify-self:center}
   .nav-toggle{display:none}
   .nav-list{display:flex;gap:clamp(.25rem,.8vw,.6rem);flex-wrap:wrap;overflow:visible}
 }
@@ -102,6 +103,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .hero-sub{max-width:60ch;margin-inline:auto;color:#EEF3F1}
 
 /* === Highlights === */
+#highlights{margin-top:-10px}
 .cards-3{display:grid;grid-template-columns:1fr;gap:16px}
 .cards-3 .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:var(--shadow-1)}
 @media (min-width: 720px){.cards-3{grid-template-columns:repeat(3,1fr)}}
@@ -112,7 +114,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .about-media picture,.about-media img{border-radius:24px}
 .about-media img{border:1px solid var(--border);box-shadow:var(--shadow-1);width:100%;height:auto}
 .about-media::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(180deg,var(--brand-mint-200),var(--brand-emerald-700));opacity:.35;z-index:-1;filter:blur(8px)}
-@media (min-width: 900px){.split{grid-template-columns:1.1fr 1fr;align-items:center}.about-media{max-width: 150px}}
+@media (min-width: 900px){.split{grid-template-columns:1.1fr 1fr;align-items:center}.about-media{max-width:220px}}
 
 /* === Skills === */
 .skills-grid{display:grid;grid-template-columns:1fr;gap:24px}
@@ -153,15 +155,27 @@ meter:-moz-meter-optimum::-moz-meter-bar{background:linear-gradient(90deg,var(--
 .modal-close{position:absolute;right:8px;top:8px;border:1px solid var(--border);background:transparent;border-radius:8px;padding:.25rem .5rem}
 
 /* === Contact === */
-.contact-form{display:grid;grid-template-columns:1fr;gap:16px}
+.contact-form{display:flex;flex-wrap:wrap;gap:16px}
 .form-field{display:grid;gap:.5rem}
 .form-field.full{grid-column:1/-1}
 .hp{display:none}
 .consent{display:flex;gap:.5rem;align-items:flex-start}
 .actions{margin-top:8px}
 .form-msg{min-height:1.5em;color:var(--muted)}
-input,textarea{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem .75rem}
-input:focus,textarea:focus{border-color:var(--primary)}
+input,textarea,select{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.6rem .75rem}
+input:focus,textarea:focus,select:focus{border-color:var(--primary)}
+.contact-form select{appearance:none;background:var(--card) url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2010%206'%3E%3Cpath%20fill='%239FB5AF'%20d='M0%200l5%206%205-6z'/%3E%3C/svg%3E") no-repeat right .75rem center/10px 6px;padding-right:2rem}
+.contact-form .w-35{flex:0 0 35%}
+.contact-form .w-40{flex:0 0 40%}
+.contact-form .w-55{flex:0 0 55%}
+.contact-form .w-95{flex:0 0 95%}
+.contact-form .w-100{flex:0 0 100%}
+@media (max-width: 899px){
+  .contact-form .w-35,
+  .contact-form .w-40,
+  .contact-form .w-55,
+  .contact-form .w-95{flex-basis:100%}
+}
 
 /* === Footer === */
 .site-footer{border-top:1px solid var(--border);padding:32px 0;margin-top:72px}
@@ -192,11 +206,6 @@ input:focus,textarea:focus{border-color:var(--primary)}
 @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
 
 
-@media (min-width: 900px){
-  .nav{justify-self:center}
-}
-
-
 @media (max-width: 899px){
   .hero{min-height:62svh}
 }
@@ -210,15 +219,3 @@ input:focus,textarea:focus{border-color:var(--primary)}
 .site-footer .rights{justify-self:end}
 
 
-/* Contact form layout demandé */
-.contact-form{display:flex;flex-wrap:wrap;gap:16px}
-.contact-form .form-field{display:flex;flex-direction:column;gap:.5rem}
-.contact-form .w-35{flex:0 0 35%}
-.contact-form .w-40{flex:0 0 40%}
-.contact-form .w-60{flex:0 0 60%}
-.contact-form .w-100{flex:0 0 100%}
-@media (max-width: 899px){
-  .contact-form .w-35,
-  .contact-form .w-40,
-  .contact-form .w-60{flex-basis:100%}
-}
