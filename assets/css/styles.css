@@ -116,14 +116,14 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 /* état OUVERT : croix centrée, barres = mêmes longueurs */
 .nav-open .nav-toggle.strawberry .l1{
-  width:15px;
+  width:16px;
   transform: translateY(11px) rotate(45deg);
 }
 .nav-open .nav-toggle.strawberry .l2{
   opacity:0;
 }
 .nav-open .nav-toggle.strawberry .l3{
-  width:15px;
+  width:16px;
   transform: translateY(-11px) rotate(-45deg);
 }
 
