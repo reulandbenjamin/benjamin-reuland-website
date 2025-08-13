@@ -225,56 +225,25 @@
       <div class="container">
         <h2 data-i18n="contact.title">Contact</h2>
         <form id="contactForm" class="contact-form" novalidate>
-
-          <div class="form-field w-35">
-            <label for="lastname">Nom*</label>
-            <input id="lastname" name="lastname" required autocomplete="family-name" />
+          <div class="form-field">
+            <label for="name" data-i18n="contact.name">Nom</label>
+            <input id="name" name="name" autocomplete="name" required />
           </div>
-          <div class="form-field w-35">
-            <label for="firstname">Prénom*</label>
-            <input id="firstname" name="firstname" required autocomplete="given-name" />
+          <div class="form-field">
+            <label for="email" data-i18n="contact.email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
-
-          <div class="form-field w-60">
-            <label for="email">Adresse e-mail*</label>
-            <input id="email" name="email" type="email" required autocomplete="email" />
+          <div class="form-field full">
+            <label for="message" data-i18n="contact.message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <div class="form-field w-40">
-            <label for="phone">Téléphone</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" />
-          </div>
-
-          <div class="form-field w-60">
-            <label for="address">Adresse postale</label>
-            <input id="address" name="address" autocomplete="street-address" />
-          </div>
-          <div class="form-field w-40">
-            <label for="country">Pays*</label>
-            <select id="country" name="country" required>
-              <option value="">— Sélectionner —</option>
-              <option>Allemagne</option><option>Autriche</option><option>Belgique</option><option>Bulgarie</option>
-              <option>Chypre</option><option>Croatie</option><option>Danemark</option><option>Espagne</option>
-              <option>Estonie</option><option>Finlande</option><option>France</option><option>Grèce</option>
-              <option>Hongrie</option><option>Irlande</option><option>Italie</option><option>Lettonie</option>
-              <option>Lituanie</option><option>Luxembourg</option><option>Malte</option><option>Pays-Bas</option>
-              <option>Pologne</option><option>Portugal</option><option>Roumanie</option><option>Slovaquie</option>
-              <option>Slovénie</option><option>Suède</option><option>Tchéquie</option><option>Autre</option>
-            </select>
-          </div>
-
-          <div class="form-field w-100">
-            <label for="message">Message*</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-
           <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <div class="consent w-100">
+          <div class="consent">
             <input id="consent" type="checkbox" required />
-            <label for="consent">J’accepte que mes données soient utilisées pour me recontacter (RGPD).</label>
+            <label for="consent" data-i18n="contact.consent">J’accepte que mes données soient utilisées pour me recontacter (RGPD).</label>
           </div>
-          <div class="actions w-100"><button class="btn primary magnet" type="submit">Envoyer</button></div>
+          <div class="actions"><button class="btn primary magnet" type="submit" data-i18n="contact.send">Envoyer</button></div>
           <p role="status" class="form-msg" aria-live="polite"></p>
-    
         </form>
       </div>
     </section>
@@ -292,7 +261,9 @@
         <a class="ico" href="#" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4.1 0 4.9 2.7 4.9 6.2V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24h-4V8z"/></svg>
         </a>
-        <a class="ico" href="mailto:benjamin.reuland@student.hepl.be" aria-label="Email scolaire"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l10 5-10 5L2 8l10-5zm0 6.9L19.6 7 12 3.9 4.4 7 12 9.9z"/><path fill="currentColor" d="M20 10v4.5c0 1.2-3.6 3.6-8 3.6s-8-2.4-8-3.6V10l8 4 8-4z"/></svg></a>
+        <a class="ico" href="mailto:prenom.nom@etud.ecole.be" aria-label="Email scolaire">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 6h20v12H2z"/><path d="M2 6l10 7L22 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </a>
       </div>
 
       <a class="back-top" href="#accueil" data-i18n="footer.backToTop" aria-label="Haut de page">Haut de page</a>

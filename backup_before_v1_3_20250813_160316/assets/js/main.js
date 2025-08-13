@@ -56,7 +56,7 @@ function adjustHeroHeight(){
   const vh=window.innerHeight, cardH=firstCard.offsetHeight, headerH=header.offsetHeight;
   const ratio=0.80; // ~80% visible
   const min=320;
-  const h=Math.max(min, Math.round(vh - ratio*cardH - headerH - 12) - 20);
+  const h=Math.max(min, Math.round(vh - ratio*cardH - headerH - 12));
   root.style.setProperty('--hero-min', `${h}px`);
 }
 window.addEventListener('load', adjustHeroHeight);
