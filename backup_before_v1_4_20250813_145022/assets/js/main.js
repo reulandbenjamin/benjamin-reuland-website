@@ -2,14 +2,13 @@ const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const root=document.documentElement;
 
-/* THEME — foncé par défaut, persisté, light disponible */
+/* THEME — foncé par défaut, persisté */
 (function initTheme(){
   const stored=localStorage.getItem('theme');
   root.setAttribute('data-theme', stored || 'dark');
   $('#themeToggle')?.addEventListener('click',()=>{
     const now=root.getAttribute('data-theme')==='light'?'dark':'light';
-    root.setAttribute('data-theme',now);
-    localStorage.setItem('theme',now);
+    root.setAttribute('data-theme',now); localStorage.setItem('theme',now);
   });
 })();
 
@@ -47,38 +46,46 @@ async function loadI18n(lang){
 }
 loadI18n(currentLang);
 
-/* HERO — Desktop seulement (évite les sauts sur mobile) */
+/* HERO → calculer la hauteur pour voir ~90% de la 1ère carte sur desktop */
 function adjustHeroHeight(){
-  const desktop=window.matchMedia('(min-width: 900px)').matches;
-  const hero=$('.hero'); const firstCard=$('#highlights .card'); const header=$('.site-header');
-  if(!hero || !firstCard || !header) return;
-  if(!desktop){ root.style.removeProperty('--hero-min'); return; }
-  const vh=window.innerHeight, cardH=firstCard.offsetHeight, headerH=header.offsetHeight;
-  const ratio=0.80; // ~80% visible
+  const hero=$('.hero'); const highlights=$('#highlights'); if(!hero||!highlights) return;
+  const headerH=$('.site-header')?.offsetHeight||0;
+  const firstCard=$('#highlights .card'); if(!firstCard) return;
+  const cardH=firstCard.offsetHeight;
+  const vh=window.innerHeight;
   const min=320;
-  const h=Math.max(min, Math.round(vh - ratio*cardH - headerH - 12));
+  const h=Math.max(min, Math.round(vh - 0.9*cardH - headerH - 12));
   root.style.setProperty('--hero-min', `${h}px`);
 }
 window.addEventListener('load', adjustHeroHeight);
 window.addEventListener('resize', adjustHeroHeight);
 
-/* CANVAS PARTICLES — Desktop animé, mobile image fixe */
+/* CANVAS PARTICLES — mobile allégé */
 const canvas=$('#bg-canvas');
 if(canvas){
-  const desktop=window.matchMedia('(min-width: 900px)').matches;
+  const coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const ctx=canvas.getContext('2d'); let w,h,particles=[];
-  function resize(){ w=canvas.clientWidth; h=canvas.clientHeight; canvas.width=w; canvas.height=h; }
-  function rand(a,b){return Math.random()*(b-a)+a}
-  function drawFrame(){
-    ctx.clearRect(0,0,w,h);
-    for(const p of particles){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w) p.vx*=-1; if(p.y<0||p.y>h) p.vy*=-1;
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(189,205,207,.85)'; ctx.fill(); }
+  if(!reduce){
+    const ctx=canvas.getContext('2d'); let w,h,particles=[],mouse={x:0,y:0,active:false};
+    const DPR = coarse ? 1 : Math.min(window.devicePixelRatio||1,2);
+    function resize(){ w=canvas.clientWidth; h=canvas.clientHeight; canvas.width=w*DPR; canvas.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+    function rand(a,b){return Math.random()*(b-a)+a}
+    function init(){ const N=coarse?26:64; particles=Array.from({length:N},()=>({x:rand(0,w),y:rand(0,h),vx:rand(-.25,.25),vy:rand(-.25,.25),r:rand(1.2,2.2)})); }
+    function step(){
+      ctx.clearRect(0,0,w,h);
+      for(const p of particles){
+        if(mouse.active && !coarse){ const dx=mouse.x-p.x, dy=mouse.y-p.y, d=Math.hypot(dx,dy)||1; const force=Math.min(80/d,1.2); p.vx+=(dx/d)*force*0.02; p.vy+=(dy/d)*force*0.02; }
+        p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w) p.vx*=-1; if(p.y<0||p.y>h) p.vy*=-1;
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=coarse?'rgba(189,205,207,.55)':'rgba(189,205,207,.85)'; ctx.fill();
+      } requestAnimationFrame(step);
+    }
+    resize(); init(); step();
+    window.addEventListener('resize',()=>{resize(); init();});
+    if(!coarse){
+      canvas.addEventListener('pointermove',e=>{ mouse.x=e.offsetX; mouse.y=e.offsetY; mouse.active=true; });
+      canvas.addEventListener('pointerleave',()=>{ mouse.active=false; });
+    }
   }
-  function init(n){ particles=Array.from({length:n},()=>({x:rand(0,w),y:rand(0,h),vx:rand(-.25,.25),vy:rand(-.25,.25),r:rand(1.2,2.2)})); }
-  resize(); init(desktop?64:28); drawFrame();
-  if(desktop && !reduce){ (function loop(){ drawFrame(); requestAnimationFrame(loop); })(); }
-  window.addEventListener('resize',()=>{ resize(); init(desktop?64:28); drawFrame(); });
 }
 
 /* MAGNET */
@@ -89,7 +96,7 @@ $$('.magnet').forEach(el=>{
   el.addEventListener('mouseleave',()=> el.style.transform='translate(0,0)');
 });
 
-/* PROJETS — filtres fluides + badges + modal */
+/* PROJETS — filtres fluides + badges dynamiques + modal */
 const grid=$('#projectsGrid'); const chips=$$('.chip');
 chips.forEach(btn=>btn.addEventListener('click',()=>{
   chips.forEach(c=>{ c.classList.remove('is-active'); c.setAttribute('aria-pressed','false'); });
@@ -103,6 +110,7 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
   });
 }));
 
+// Badges automatiques
 $$('.project-card').forEach(card=>{
   const media=$('.project-media',card); const title=$('h3',card)?.textContent||'';
   const id=card.dataset.id||'';
@@ -110,14 +118,15 @@ $$('.project-card').forEach(card=>{
   media?.setAttribute('data-badge', badge);
 });
 
+// Modal contenu
 const modal=$('#modal'); const modalTitle=$('#modalTitle'); const modalBody=$('.modal-body');
 const DETAILS={
-  mmc:`Plateforme légère pour regrouper des créateurs belges : catalogue filtrable, fiches produits claires, mise à jour simple. Performance, SEO et panier “lite” avec exports CSV.`,
-  sw:`Refonte complète : identité visuelle, webdesign et site statique ultra-rapide. Contenus métiers (ébénisterie), galerie responsive et contact piloté par Formspree + reCAPTCHA v3.`,
-  rca:`Lancement d’un Repair Café à l’école : orga, com et suivi. Page d’inscription, planning et stats des réparations (vision “impact réel”).`,
-  lab:`Erasmus+ : mise en place d’un labo d’électricité. Choix matériel, sécurité, bancs d’essai, docs et mini démos connectées (IoT pédagogique).`,
-  ce:`Outils pour la représentation étudiante : enquêtes, suivi, site d’infos clair et accessible. Ateliers méthodo et maintenance des services.`,
-  org:`Participation active à des organisations étudiantes : événements, débats, entraide. Petites apps internes (inscriptions, votes, mini-CRM).`
+  mmc:`Plateforme légère pour regrouper des créateurs belges : catalogue filtrable, fiches produits claires, mise à jour simple. Focus sur la performance et l’indexation. Intégration d’un panier “lite” et d’exports CSV.`,
+  sw:`Refonte complète : identité visuelle, webdesign et site statique ultra-rapide. Optimisation des contenus métiers (ébénisterie), galerie responsive et contact piloté par Formspree + hCaptcha.`,
+  rca:`Mise en place d’un Repair Café au sein de l’école : organisation logistique, communication et suivi. Côté tech, création d’une page d’inscription, planning et statistiques d’objets réparés.`,
+  lab:`Projet Erasmus+ : construction d’un labo d’électricité. Choix du matériel pédagogique, sécurité, schémas, bancs d’essai, documentation et formation locale. Démonstrateurs connectés (IoT).`,
+  ce:`Accompagnement des étudiants : outils de consultation (enquêtes), suivi anonyme, site informatif clair et accessible. Animation d’ateliers méthodo et “maintenance” des services numériques.`,
+  org:`Participation à différentes organisations étudiantes : événements, débats, entraide. Mise à dispo de petites applications internes (inscriptions, votes, mini-CRM).`
 };
 function openModal(title,id){
   modalTitle.textContent=title;
@@ -127,6 +136,7 @@ function openModal(title,id){
 function closeModal(){ modal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
 modal?.addEventListener('click',e=>{ if(e.target.hasAttribute('data-close')) closeModal(); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
 $$('.project-card .overlay').forEach(link=>{
   link.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -136,43 +146,34 @@ $$('.project-card .overlay').forEach(link=>{
   });
 });
 
-/* CONTACT — Formspree + reCAPTCHA v3 */
+/* CONTACT — Formspree + hCaptcha (optionnels) */
 const FORMSPREE=window.FORMSPREE_ENDPOINT||"";
-const RECAPTCHA_SITEKEY=window.RECAPTCHA_SITEKEY||"";
 const form=$('#contactForm'); const statusEl=$('.form-msg');
 form?.addEventListener('submit',async e=>{
   e.preventDefault(); statusEl.textContent='';
   if(form.company?.value) return; // honeypot
   const data=new FormData(form);
 
-  async function send(){
+  if(FORMSPREE){
     try{
+      // hCaptcha si présent
+      if(window.hcaptcha){
+        const token=hcaptcha.getResponse();
+        if(!token){ statusEl.textContent='Veuillez compléter le Captcha.'; return; }
+        data.append('h-captcha-response', token);
+      }
       const res=await fetch(FORMSPREE,{method:'POST',body:data,headers:{'Accept':'application/json'}});
-      if(res.ok){ statusEl.textContent='Merci ! Votre message a bien été envoyé.'; form.reset(); }
+      if(res.ok){ statusEl.textContent='Merci ! Votre message a bien été envoyé.'; form.reset(); if(window.hcaptcha) hcaptcha.reset(); }
       else{ statusEl.textContent='Oups, une erreur est survenue. Réessayez.'; }
     }catch(_){ statusEl.textContent='Oups, une erreur est survenue. Réessayez.'; }
-  }
-
-  if(FORMSPREE && RECAPTCHA_SITEKEY && window.grecaptcha){
-    try{
-      grecaptcha.ready(async ()=>{
-        const token=await grecaptcha.execute(RECAPTCHA_SITEKEY,{action:'submit'});
-        data.append('g-recaptcha-response', token);
-        await send();
-      });
-    }catch(_){ await send(); }
   }else{
-    if(!FORMSPREE){
-      const subject=encodeURIComponent('Contact site benjamin-reuland.be');
-      const body=encodeURIComponent(`Nom: ${form.name.value}\nEmail: ${form.email.value}\n\n${form.message.value}`);
-      window.location.href=`mailto:contact@benjamin-reuland.be?subject=${subject}&body=${body}`;
-    }else{
-      await send();
-    }
+    const subject=encodeURIComponent('Contact site benjamin-reuland.be');
+    const body=encodeURIComponent(`Nom: ${form.name.value}\nEmail: ${form.email.value}\n\n${form.message.value}`);
+    window.location.href=`mailto:contact@benjamin-reuland.be?subject=${subject}&body=${body}`;
   }
 });
 
-/* CURSOR (desktop only) */
+/* CURSOR custom (desktop only) */
 const cursor=$('#cursor'); const coarse=window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(cursor && !coarse && !reduce){
