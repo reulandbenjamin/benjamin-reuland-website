@@ -62,20 +62,14 @@ function adjustHeroHeight(){
 window.addEventListener('load', adjustHeroHeight);
 window.addEventListener('resize', adjustHeroHeight);
 
-/* CANVAS PARTICLES — animés partout, interactions desktop */
+/* CANVAS PARTICLES — Desktop animé, mobile image fixe */
 const canvas=$('#bg-canvas');
 if(canvas){
-
-  let desktop=window.matchMedia('(min-width: 900px)').matches;
+  const desktop=window.matchMedia('(min-width: 900px)').matches;
   const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const ctx=canvas.getContext('2d'); let w,h,particles=[]; const pointer={x:0,y:0,active:false};
+  function resize(){ w=canvas.clientWidth; h=canvas.clientHeight; canvas.width=w; canvas.height=h; }
   function rand(a,b){return Math.random()*(b-a)+a}
-  function init(n){ particles=Array.from({length:n},()=>({x:rand(0,w),y:rand(0,h),vx:rand(-.25,.25),vy:rand(-.25,.25),r:rand(1.2,2.2)})); }
-  function resize(){
-    desktop=window.matchMedia('(min-width: 900px)').matches;
-    w=canvas.clientWidth; h=canvas.clientHeight; canvas.width=w; canvas.height=h;
-    init(desktop?64:28);
-  }
   function drawFrame(){
     ctx.clearRect(0,0,w,h);
     for(const p of particles){
@@ -87,7 +81,6 @@ if(canvas){
       ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(189,205,207,.85)'; ctx.fill();
     }
   }
-
   function init(n){ particles=Array.from({length:n},()=>({x:rand(0,w),y:rand(0,h),vx:rand(-.25,.25),vy:rand(-.25,.25),r:rand(1.2,2.2)})); }
   resize(); init(desktop?64:28); drawFrame();
   if(desktop && !reduce){
@@ -98,7 +91,6 @@ if(canvas){
   }else{
     window.addEventListener('resize',()=>{ resize(); drawFrame(); });
   }
-
 }
 
 /* MAGNET */
@@ -109,24 +101,6 @@ $$('.magnet').forEach(el=>{
   el.addEventListener('mouseleave',()=> el.style.transform='translate(0,0)');
 });
 
-/* SKILLS — animate meters on first view */
-const skillsSection=$('#competences');
-if(skillsSection){
-  const meters=$$('#competences meter');
-  meters.forEach(m=>{ m.dataset.target=m.value; m.value=0; const label=m.closest('li').querySelector('span')?.textContent||''; m.setAttribute('aria-label', `${label}, 0%`); });
-  const io=new IntersectionObserver((entries,obs)=>{
-    if(entries.some(e=>e.isIntersecting)){
-      meters.forEach(m=>{
-        const target=+m.dataset.target; let current=0;
-        function step(){ current+=target/40; if(current>=target) current=target; m.value=current; const label=m.closest('li').querySelector('span')?.textContent||''; m.setAttribute('aria-label', `${label}, ${Math.round(current)}%`); if(current<target) requestAnimationFrame(step); }
-        requestAnimationFrame(step);
-      });
-      obs.disconnect();
-    }
-  },{threshold:.4});
-  io.observe(skillsSection);
-}
-
 /* PROJETS — filtres fluides + badges + modal */
 const grid=$('#projectsGrid'); const chips=$$('.chip');
 chips.forEach(btn=>btn.addEventListener('click',()=>{
@@ -136,16 +110,8 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
   cards.forEach(card=>{
     const tags=card.dataset.tags.split(',');
     const show=(f==='all')||tags.includes(f);
-    if(show){
-      card.classList.remove('is-hidden');
-      card.style.opacity='0';
-      card.style.transform='scale(.96)';
-      requestAnimationFrame(()=>{ card.style.opacity='1'; card.style.transform='scale(1)'; });
-    }else{
-      card.style.opacity='0';
-      card.style.transform='scale(.96)';
-      setTimeout(()=> card.classList.add('is-hidden'), 320);
-    }
+    if(show){ card.classList.remove('is-hidden'); card.style.opacity='1'; card.style.transform='scale(1)'; }
+    else{ card.style.opacity='0'; card.style.transform='scale(.98)'; setTimeout(()=> card.classList.add('is-hidden'), 180); }
   });
 }));
 
@@ -186,7 +152,6 @@ $$('.project-card .overlay').forEach(link=>{
 const FORMSPREE=window.FORMSPREE_ENDPOINT||"";
 const RECAPTCHA_SITEKEY=window.RECAPTCHA_SITEKEY||"";
 const form=$('#contactForm'); const statusEl=$('.form-msg');
-form?.addEventListener('focusin',()=>document.body.classList.add('show-recaptcha'),{once:true});
 form?.addEventListener('submit',async e=>{
   e.preventDefault(); statusEl.textContent='';
   if(form.company?.value) return; // honeypot

@@ -65,8 +65,8 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .logo{font-family:var(--ff-title);font-weight:700;letter-spacing:.5px;background:linear-gradient(180deg,var(--brand-mint-200),var(--brand-emerald-700));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.25rem;justify-self:center}
 
 /* nav list */
-.nav{justify-self:start;align-self:center;display:flex}
-.nav-list{display:none;list-style:none;margin:0;padding:0;align-items:center}
+.nav{justify-self:start}
+.nav-list{display:none;list-style:none;margin:0;padding:0}
 .nav-list a{padding:.4rem .6rem;border-radius:9999px;white-space:nowrap;font-size:clamp(.92rem, 1.1vw, 1rem)}
 .nav-list a:hover{background:color-mix(in srgb, var(--card), transparent 40%)}
 .nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:44px;height:40px;margin-left:6px}
@@ -79,7 +79,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .nav-toggle.strawberry .l3{width:10px}
 .nav-open .nav-toggle.strawberry .l1{transform:translateY(6px) rotate(45deg);width:24px}
 .nav-open .nav-toggle.strawberry .l2{opacity:0}
-.nav-open .nav-toggle.strawberry .l3{transform:translateY(-7px) rotate(-45deg)}
+.nav-open .nav-toggle.strawberry .l3{transform:translateY(-6px) rotate(-45deg);width:24px}
 
 .header-actions{display:flex;align-items:center;gap:.5rem;justify-self:end;margin-right:6px}
 .lang-select{border:1px solid var(--border);background:var(--card);border-radius:9999px;padding:.35rem .5rem}
@@ -114,8 +114,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .about-media picture,.about-media img{border-radius:24px}
 .about-media img{border:1px solid var(--border);box-shadow:var(--shadow-1);width:100%;height:auto}
 .about-media::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(180deg,var(--brand-mint-200),var(--brand-emerald-700));opacity:.35;z-index:-1;filter:blur(8px)}
-
-@media (min-width: 900px){.split{grid-template-columns:30% 70%;align-items:center}.about-media{max-width:220px}}
+@media (min-width: 900px){.split{grid-template-columns:1.1fr 1fr;align-items:center}.about-media{max-width:220px}}
 
 /* === Skills === */
 .skills-grid{display:grid;grid-template-columns:1fr;gap:24px}
@@ -136,7 +135,7 @@ meter:-moz-meter-optimum::-moz-meter-bar{background:linear-gradient(90deg,var(--
 @media (min-width: 720px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (min-width: 1024px){.grid{grid-template-columns:repeat(3,1fr)}}
 
-.project-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transform-origin:center;transition:opacity var(--dur-slow) var(--ease-smooth), transform var(--dur-slow) var(--ease-smooth)}
+.project-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;transform-origin:center;transition:opacity var(--dur-med), transform var(--dur-med)}
 .project-card.is-hidden{display:none !important}
 .project-media{height:140px;border-radius:8px;
   background:
@@ -149,10 +148,10 @@ meter:-moz-meter-optimum::-moz-meter-bar{background:linear-gradient(90deg,var(--
 .project-card:hover .overlay{opacity:1}
 
 /* Modal */
-.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center}
-.modal[aria-hidden="false"]{display:flex}
+.modal{position:fixed;inset:0;display:none}
+.modal[aria-hidden="false"]{display:block}
 .modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.modal-dialog{position:relative;z-index:1;max-width:760px;margin:0;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:24px}
+.modal-dialog{position:relative;z-index:1;max-width:760px;margin:8vh auto;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:24px}
 .modal-close{position:absolute;right:8px;top:8px;border:1px solid var(--border);background:transparent;border-radius:8px;padding:.25rem .5rem}
 
 /* === Contact === */
@@ -170,14 +169,13 @@ input:focus,textarea:focus,select:focus{border-color:var(--primary)}
 .contact-form .w-40{flex:0 0 40%}
 .contact-form .w-55{flex:0 0 55%}
 .contact-form .w-95{flex:0 0 95%}
-
+.contact-form .w-100{flex:0 0 100%}
 @media (max-width: 899px){
   .contact-form .w-35,
   .contact-form .w-40,
-  .contact-form .w-55{flex-basis:100%}
+  .contact-form .w-55,
+  .contact-form .w-95{flex-basis:100%}
 }
-.grecaptcha-badge{visibility:hidden}
-.show-recaptcha .grecaptcha-badge{visibility:visible}
 
 /* === Footer === */
 .site-footer{border-top:1px solid var(--border);padding:32px 0;margin-top:72px}
