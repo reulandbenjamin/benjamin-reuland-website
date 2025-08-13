@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Benjamin Reuland — Ingénierie & Web",
+    "description": "Étudiant ingénieur industriel (électronique/embarqués) et développeur web. Projets concrets, impact réel."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "services": "Services",
+    "contact": "Contact",
+    "legal": "Mentions légales"
+  },
+  "hero": {
+    "title": "Ingénierie & Web, au service du réel.",
+    "subtitle": "Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour un monde meilleur",
+    "ctaProjects": "Voir mes projets",
+    "ctaContact": "Me contacter"
+  },
+  "highlights": {
+    "student": "Étudiant en ingénierie",
+    "studentDesc": "J'étudie l’ingénierie industrielle à Liège, je me spécialise en électronique et systèmes embarqués.",
+    "dev": "Développeur Web",
+    "devDesc": "Je développe des sites web statiques, des boutiques en ligne et des pages performantes optimisées SEO.",
+    "youth": "Engagement sociétal",
+    "youthDesc": "J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde."
+  },
+  "about": {
+    "title": "À propos",
+    "p1": "Je m'appelle Benjamin. J’aime transformer des besoins concrets en solutions utiles : des interfaces claires, des systèmes embarqués fiables et des sites qui chargent vite.",
+    "p2": "Curieux et autonome, je construis vite des prototypes, je mesure, j’améliore. Mon fil rouge : apporter un impact réel — pour des associations, des artisans ou des projets éducatifs.",
+    "goals": [
+      "Stage en électronique/embarqués",
+      "Missions freelance web",
+      "Partenariats éducatifs",
+      "Projets citoyens"
+    ]
+  },
+  "skills": {
+    "title": "Compétences",
+    "langs": "Langages",
+    "tools": "Outils",
+    "soft": "Soft skills",
+    "srLevel": "{label}: niveau {value}/5"
+  },
+  "projects": {
+    "title": "Projets",
+    "filterAll": "Tous",
+    "filterWeb": "Web",
+    "filterIngWeb": "Ingénierie et web",
+    "filterSoc": "Social",
+    "items": [
+      {
+        "title": "Mini Marché des Créateurs belges",
+        "desc": "Développement d'une plateforme de mise en commun de petits créateurs belges",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "SuperWAAD",
+        "desc": "Refonte complète de la charte graphique et du site web pour un ébéniste local",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "Repair Café Asty-Moulin",
+        "desc": "Création d'un Repair Café dans mon enseignement secondaire (Young Changemaker Ashoka Belgium)",
+        "tags": [
+          "social"
+        ]
+      },
+      {
+        "title": "Construction d'un labo d'électricité en Italie",
+        "desc": "Construction d'un laboratoire d'électricité (Erasmus+) pour former aux métiers de demain",
+        "tags": [
+          "ingweb",
+          "social"
+        ]
+      },
+      {
+        "title": "Conseil Étudiant",
+        "desc": "Investissement dans la représentation étudiante de mon EES pour accompagner les étudiants",
+        "tags": [
+          "social"
+        ]
+      },
+      {
+        "title": "Organisations étudiantes",
+        "desc": "Engagement pour amener débat, esprit critique et solidarité auprès des étudiants",
+        "tags": [
+          "social"
+        ]
+      }
+    ],
+    "view": "Voir le projet →"
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "title": "Sites WordPress collaboratifs",
+        "desc": "De l’idée au site livré : design clair, contenus optimisés, formation à la prise en main. Vous repartez autonome."
+      },
+      {
+        "title": "Sites statiques rapides",
+        "desc": "Pages ultra-performantes (SEO, accessibilité) déployées en quelques minutes sur Plesk. Zéro maintenance."
+      },
+      {
+        "title": "Prototypage embarqué / Conseil tech",
+        "desc": "Électronique, capteurs, intégration web : je fais décoller vos idées avec des preuves de concept mesurables."
+      }
+    ],
+    "ctaQuote": "Demander un devis"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "consent": "J’accepte que mes données soient utilisées pour me recontacter (RGPD).",
+    "send": "Envoyer",
+    "success": "Merci ! Votre message a bien été envoyé.",
+    "error": "Oups, une erreur est survenue. Réessayez."
+  },
+  "footer": {
+    "rights": "© {year} Benjamin Reuland. Tous droits réservés.",
+    "backToTop": "Haut de page"
+  }
+}
