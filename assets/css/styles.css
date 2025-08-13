@@ -85,7 +85,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .nav-list{display:none;list-style:none;margin:0;padding:0;align-items:center}
 .nav-list a{display:flex;align-items:center;line-height:1;padding:.4rem .6rem;border-radius:9999px;white-space:nowrap;font-size:clamp(.92rem, 1.1vw, 1rem);}
 .nav-list a:hover{background:color-mix(in srgb, var(--card), transparent 40%)}
-.nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:44px;height:30px;margin-left:6px}
+.nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:34px;height:30px;margin-left:6px}
 
 /* Strawberry → X : hamburger effilé fermé, croix symétrique ouverte */
 .nav-toggle.strawberry{
