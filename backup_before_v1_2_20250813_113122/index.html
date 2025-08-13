@@ -10,20 +10,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/css/styles.css" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Benjamin Reuland">
-  <meta property="og:title" content="Benjamin Reuland — Ingénierie & Web">
-  <meta property="og:description" content="Projets concrets, impact réel. Électronique/embarqués & web.">
-  <meta property="og:url" content="https://benjamin-reuland.be/">
-  <meta property="og:image" content="https://benjamin-reuland.be/assets/img/og.png">
-  <meta property="og:image:alt" content="BR — Benjamin Reuland">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- hCaptcha (pour Formspree) -->
-  
-
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Benjamin Reuland" />
+  <meta property="og:title" content="Benjamin Reuland — Ingénierie & Web" />
+  <meta property="og:description" content="Projets concrets, impact réel. Électronique/embarqués & web." />
+  <meta property="og:url" content="https://benjamin-reuland.be/" />
+  <meta property="og:image" content="https://benjamin-reuland.be/assets/img/og.png" />
+  <meta name="theme-color" content="#034C36" />
   <!-- JSON-LD Person -->
   <script type="application/ld+json">
   {
@@ -32,7 +26,11 @@
     "name":"Benjamin Reuland",
     "url":"https://benjamin-reuland.be/",
     "email":"mailto:contact@benjamin-reuland.be",
-    "jobTitle":"Étudiant ingénieur industriel, développeur web"
+    "jobTitle":"Étudiant ingénieur industriel, développeur web",
+    "sameAs":[
+      "https://github.com/benjaminreuland",
+      "https://www.linkedin.com/in/benjaminreuland"
+    ]
   }
   </script>
 </head>
@@ -44,11 +42,9 @@
       <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
 
       <nav class="nav" aria-label="Navigation principale">
-        <!-- Burger Strawberry -->
-        <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
-          <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+          <span class="sr-only">Ouvrir le menu</span>☰
         </button>
-
         <ul id="primary-nav" class="nav-list">
           <li><a data-i18n="nav.home" href="#accueil">Accueil</a></li>
           <li><a data-i18n="nav.about" href="#a-propos">À propos</a></li>
@@ -75,7 +71,6 @@
   </header>
 
   <main id="main">
-    <!-- HERO -->
     <section id="accueil" class="section hero" aria-label="Accueil">
       <canvas id="bg-canvas" aria-hidden="true"></canvas>
       <div class="container hero-inner">
@@ -88,7 +83,6 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
     <section id="highlights" class="section" aria-label="Points clés">
       <div class="container cards-3">
         <article class="card">
@@ -106,14 +100,10 @@
       </div>
     </section>
 
-    <!-- À PROPOS -->
     <section id="a-propos" class="section" aria-label="À propos">
       <div class="container split">
         <div class="about-media">
-          <picture>
-            <source srcset="/assets/img/benjamin.webp" type="image/webp">
-            <img src="/assets/img/benjamin.jpg" alt="Portrait de Benjamin Reuland" loading="lazy" />
-          </picture>
+          <img src="/assets/img/benjamin.jpg" alt="Portrait de Benjamin Reuland" loading="lazy" />
         </div>
         <div class="about-text">
           <h2 data-i18n="about.title">À propos</h2>
@@ -129,7 +119,6 @@
       </div>
     </section>
 
-    <!-- COMPÉTENCES -->
     <section id="competences" class="section" aria-label="Compétences">
       <div class="container">
         <h2 data-i18n="skills.title">Compétences</h2>
@@ -137,34 +126,32 @@
           <div>
             <h3 data-i18n="skills.langs">Langages</h3>
             <ul class="skill-badges">
-              <li><span>Python</span><meter min="0" max="100" value="80" aria-label="Python, 80%"></meter></li>
-              <li><span>C++</span><meter min="0" max="100" value="50" aria-label="C++, 50%"></meter></li>
-              <li><span>HTML</span><meter min="0" max="100" value="70" aria-label="HTML, 70%"></meter></li>
-              <li><span>CSS</span><meter min="0" max="100" value="70" aria-label="CSS, 70%"></meter></li>
-              <li><span>JS</span><meter min="0" max="100" value="40" aria-label="JavaScript, 40%"></meter></li>
+              <li><span>Python</span><meter min="0" max="5" value="4" aria-label="Python, niveau 4/5"></meter></li>
+              <li><span>C++</span><meter min="0" max="5" value="3" aria-label="C++, niveau 3/5"></meter></li>
+              <li><span>HTML</span><meter min="0" max="5" value="5" aria-label="HTML, niveau 5/5"></meter></li>
+              <li><span>CSS</span><meter min="0" max="5" value="4" aria-label="CSS, niveau 4/5"></meter></li>
+              <li><span>JS</span><meter min="0" max="5" value="4" aria-label="JavaScript, niveau 4/5"></meter></li>
             </ul>
           </div>
           <div>
             <h3 data-i18n="skills.tools">Outils</h3>
             <ul class="skill-badges">
-              <li><span>WordPress</span><meter min="0" max="100" value="90" aria-label="WordPress, 90%"></meter></li>
-              <li><span>Git</span><meter min="0" max="100" value="80" aria-label="Git, 80%"></meter></li>
+              <li><span>WordPress</span><meter min="0" max="5" value="4" aria-label="WordPress, niveau 4/5"></meter></li>
+              <li><span>Git</span><meter min="0" max="5" value="4" aria-label="Git, niveau 4/5"></meter></li>
             </ul>
           </div>
           <div>
             <h3 data-i18n="skills.soft">Soft skills</h3>
             <ul class="skill-badges">
-              <li><span>Esprit critique</span><meter min="0" max="100" value="95" aria-label="Esprit critique, 95%"></meter></li>
-              <li><span>Autodidacte</span><meter min="0" max="100" value="80" aria-label="Autodidacte, 80%"></meter></li>
-              <li><span>Organisation</span><meter min="0" max="100" value="80" aria-label="Organisation, 80%"></meter></li>
-              <li><span>Pédagogie</span><meter min="0" max="100" value="80" aria-label="Pédagogie, 80%"></meter></li>
+              <li><span>Organisation</span><meter min="0" max="5" value="4" aria-label="Organisation, niveau 4/5"></meter></li>
+              <li><span>Pédagogie</span><meter min="0" max="5" value="4" aria-label="Pédagogie, niveau 4/5"></meter></li>
+              <li><span>Esprit critique</span><meter min="0" max="5" value="4" aria-label="Esprit critique, niveau 4/5"></meter></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJETS -->
     <section id="projets" class="section" aria-label="Projets">
       <div class="container">
         <div class="section-head">
@@ -182,48 +169,47 @@
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.0.title">Mini Marché des Créateurs belges</h3>
             <p data-i18n="projects.items.0.desc">Développement d'une plateforme de mise en commun de petits créateurs belges</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <ul class="tag-list"><li>#web</li></ul>
           </article>
 
           <article class="project-card" data-tags="web">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.1.title">SuperWAAD</h3>
             <p data-i18n="projects.items.1.desc">Refonte complète de la charte graphique et du site web pour un ébéniste local</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <ul class="tag-list"><li>#web</li></ul>
           </article>
 
           <article class="project-card" data-tags="social">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.2.title">Repair Café Asty-Moulin</h3>
             <p data-i18n="projects.items.2.desc">Création d'un Repair Café dans mon enseignement secondaire (Young Changemaker Ashoka Belgium)</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <ul class="tag-list"><li>#social</li></ul>
           </article>
 
           <article class="project-card" data-tags="ingweb,social">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.3.title">Construction d'un labo d'électricité en Italie</h3>
             <p data-i18n="projects.items.3.desc">Construction d'un laboratoire d'électricité (Erasmus+) pour former aux métiers de demain</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <ul class="tag-list"><li>#ingénierie-web</li><li>#social</li></ul>
           </article>
 
           <article class="project-card" data-tags="social">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.4.title">Conseil Étudiant</h3>
             <p data-i18n="projects.items.4.desc">Investissement dans la représentation étudiante de mon EES pour accompagner les étudiants</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <ul class="tag-list"><li>#social</li></ul>
           </article>
 
           <article class="project-card" data-tags="social">
             <div class="project-media" aria-hidden="true"></div>
             <h3 data-i18n="projects.items.5.title">Organisations étudiantes</h3>
             <p data-i18n="projects.items.5.desc">Engagement pour amener débat, esprit critique et solidarité auprès des étudiants</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <ul class="tag-list"><li>#social</li></ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section id="services" class="section" aria-label="Services">
       <div class="container cards-3">
         <h2 class="full" data-i18n="services.title">Services</h2>
@@ -234,7 +220,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact" class="section" aria-label="Contact">
       <div class="container">
         <h2 data-i18n="contact.title">Contact</h2>
@@ -252,7 +237,6 @@
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
           <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          
           <div class="consent">
             <input id="consent" type="checkbox" required />
             <label for="consent" data-i18n="contact.consent">J’accepte que mes données soient utilisées pour me recontacter (RGPD).</label>
@@ -272,19 +256,12 @@
         <a href="#contact" data-i18n="nav.contact">Contact</a>
         <a href="/legal.html" data-i18n="nav.legal">Mentions légales</a>
       </nav>
-      <div class="socials" aria-label="Réseaux sociaux">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Instagram">Instagram</a>
-        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-        <a href="mailto:prenom.nom@etud.ecole.be" aria-label="Email scolaire">Email scolaire</a>
-      </div>
       <a class="back-top" href="#accueil" data-i18n="footer.backToTop">Haut de page</a>
       <p class="rights" data-i18n="footer.rights">© <span id="year"></span> Benjamin Reuland. Tous droits réservés.</p>
     </div>
   </footer>
 
   <div id="cursor" aria-hidden="true"></div>
-  <script>window.FORMSPREE_ENDPOINT="";</script>
   <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>
