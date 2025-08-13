@@ -66,19 +66,31 @@ window.addEventListener('resize', adjustHeroHeight);
 const canvas=$('#bg-canvas');
 if(canvas){
   const desktop=window.matchMedia('(min-width: 900px)').matches;
-  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const ctx=canvas.getContext('2d'); let w,h,particles=[];
+  const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ctx=canvas.getContext('2d'); let w,h,particles=[]; const pointer={x:0,y:0,active:false};
   function resize(){ w=canvas.clientWidth; h=canvas.clientHeight; canvas.width=w; canvas.height=h; }
   function rand(a,b){return Math.random()*(b-a)+a}
   function drawFrame(){
     ctx.clearRect(0,0,w,h);
-    for(const p of particles){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w) p.vx*=-1; if(p.y<0||p.y>h) p.vy*=-1;
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(189,205,207,.85)'; ctx.fill(); }
+    for(const p of particles){
+      if(pointer.active){
+        const dx=p.x-pointer.x, dy=p.y-pointer.y; const dist=Math.hypot(dx,dy);
+        if(dist<80){ const f=(80-dist)/80; p.vx+=(dx/dist)*f*.5; p.vy+=(dy/dist)*f*.5; }
+      }
+      p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>w) p.vx*=-1; if(p.y<0||p.y>h) p.vy*=-1;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle='rgba(189,205,207,.85)'; ctx.fill();
+    }
   }
   function init(n){ particles=Array.from({length:n},()=>({x:rand(0,w),y:rand(0,h),vx:rand(-.25,.25),vy:rand(-.25,.25),r:rand(1.2,2.2)})); }
   resize(); init(desktop?64:28); drawFrame();
-  if(desktop && !reduce){ (function loop(){ drawFrame(); requestAnimationFrame(loop); })(); }
-  window.addEventListener('resize',()=>{ resize(); init(desktop?64:28); drawFrame(); });
+  if(desktop && !reduce){
+    canvas.addEventListener('pointermove',e=>{const r=canvas.getBoundingClientRect(); pointer.x=e.clientX-r.left; pointer.y=e.clientY-r.top; pointer.active=true;});
+    canvas.addEventListener('pointerleave',()=>{pointer.active=false;});
+    (function loop(){ drawFrame(); requestAnimationFrame(loop); })();
+    window.addEventListener('resize',()=>{ resize(); init(64); });
+  }else{
+    window.addEventListener('resize',()=>{ resize(); drawFrame(); });
+  }
 }
 
 /* MAGNET */
