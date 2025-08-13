@@ -72,9 +72,12 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:44px;height:40px;margin-left:6px}
 
 /* Strawberry → X */
-.nav-toggle.strawberry .line{display:block;height:2px;background:currentColor;border-radius:2px;transition:transform var(--dur-fast) var(--ease-smooth), opacity var(--dur-fast);width:24px}
-.nav-toggle.strawberry .line + .line{margin-top:5px}
-.nav-open .nav-toggle.strawberry .l1{transform:translateY(7px) rotate(45deg)}
+.nav-toggle.strawberry .line{display:block;height:2px;background:currentColor;border-radius:2px;transition:transform var(--dur-fast) var(--ease-smooth),opacity var(--dur-fast);width:24px}
+.nav-toggle.strawberry .line + .line{margin-top:3px}
+.nav-toggle.strawberry .l1{width:24px}
+.nav-toggle.strawberry .l2{width:16px}
+.nav-toggle.strawberry .l3{width:10px}
+.nav-open .nav-toggle.strawberry .l1{transform:translateY(6px) rotate(45deg);width:24px}
 .nav-open .nav-toggle.strawberry .l2{opacity:0}
 .nav-open .nav-toggle.strawberry .l3{transform:translateY(-7px) rotate(-45deg)}
 
@@ -111,6 +114,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .about-media picture,.about-media img{border-radius:24px}
 .about-media img{border:1px solid var(--border);box-shadow:var(--shadow-1);width:100%;height:auto}
 .about-media::after{content:"";position:absolute;inset:-2px;border-radius:inherit;background:linear-gradient(180deg,var(--brand-mint-200),var(--brand-emerald-700));opacity:.35;z-index:-1;filter:blur(8px)}
+
 @media (min-width: 900px){.split{grid-template-columns:30% 70%;align-items:center}.about-media{max-width:220px}}
 
 /* === Skills === */
@@ -165,7 +169,8 @@ input:focus,textarea:focus,select:focus{border-color:var(--primary)}
 .contact-form .w-35{flex:0 0 35%}
 .contact-form .w-40{flex:0 0 40%}
 .contact-form .w-55{flex:0 0 55%}
-.contact-form .w-100{flex:0 0 100%}
+.contact-form .w-95{flex:0 0 95%}
+
 @media (max-width: 899px){
   .contact-form .w-35,
   .contact-form .w-40,
