@@ -41,11 +41,14 @@
 
   <header class="site-header" role="banner">
     <div class="container header-inner grid-3">
-      <!-- Mobile: burger à gauche, logo centré, actions à droite -->
+      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
+
       <nav class="nav" aria-label="Navigation principale">
+        <!-- Burger Strawberry -->
         <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
           <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
         </button>
+
         <ul id="primary-nav" class="nav-list">
           <li><a data-i18n="nav.home" href="#accueil">Accueil</a></li>
           <li><a data-i18n="nav.about" href="#a-propos">À propos</a></li>
@@ -55,8 +58,6 @@
           <li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
 
       <div class="header-actions">
         <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
@@ -91,15 +92,15 @@
       <div class="container cards-3">
         <article class="card">
           <h3 data-i18n="highlights.student">Étudiant en ingénierie</h3>
-          <p data-i18n="highlights.studentDesc">J'étudie l’ingénierie industrielle à Liège, je me spécialise en électronique et systèmes embarqués.</p>
+          <p>J'étudie l’ingénierie industrielle à Liège, je me spécialise en électronique et systèmes embarqués.</p>
         </article>
         <article class="card">
           <h3 data-i18n="highlights.dev">Développeur Web</h3>
-          <p data-i18n="highlights.devDesc">Je développe des sites web statiques, des boutiques en ligne et des pages performantes optimisées SEO.</p>
+          <p>Je développe des sites web statiques, des boutiques en ligne et des pages performantes optimisées SEO.</p>
         </article>
         <article class="card">
           <h3 data-i18n="highlights.youth">Engagement sociétal</h3>
-          <p data-i18n="highlights.youthDesc">J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde.</p>
+          <p>J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde.</p>
         </article>
       </div>
     </section>
@@ -115,9 +116,8 @@
         </div>
         <div class="about-text">
           <h2 data-i18n="about.title">À propos</h2>
-          <p>Je m’appelle Benjamin Reuland. Je construis des choses utiles : des interfaces claires, des systèmes embarqués fiables et des sites rapides. J’aime passer d’une idée à un prototype mesurable en quelques jours, apprendre ce qui marche (et ce qui casse), puis livrer une version solide.</p>
-          <p>À l’école, je me spécialise en électronique et en systèmes embarqués. À côté, je conçois des sites et des outils web pour des associations, des artisans et des projets étudiants : performance, accessibilité et référencement sont mes bases — avec des contenus simples qui parlent à tout le monde.</p>
-          <p>Ce qui me motive : résoudre des vrais problèmes, pas faire joli pour le plaisir. Je préfère une solution claire, maintenable et documentée à un effet clinquant. Si un projet implique capteurs, microcontrôleurs, API web ou intégration terrain → je suis partant.</p>
+          <p>Je conçois des choses utiles. Côté <strong>ingénierie</strong> : capteurs, microcontrôleurs, intégration embarquée. Côté <strong>web</strong> : interfaces simples, pages rapides et accessibles qui se positionnent.</p>
+          <p>Mon mode opératoire : prototyper vite, mesurer, itérer. J’aime les projets concrets — associations, artisans, éducation — où un livrable change vraiment quelque chose.</p>
           <ul class="goals">
             <li>Stage en électronique/embarqués</li>
             <li>Missions freelance web</li>
@@ -177,46 +177,52 @@
         </div>
 
         <div class="grid projects-grid" id="projectsGrid">
-          <article class="project-card" data-tags="web" data-id="mmc">
-            <div class="project-media" aria-hidden="true"></div>
+          <article class="project-card" data-tags="web">
+            <div class="project-media" data-code="MMC" aria-hidden="true"></div>
             <h3>Mini Marché des Créateurs belges</h3>
             <p>Développement d'une plateforme de mise en commun de petits créateurs belges</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <a class="overlay open-project" href="#" data-title="Mini Marché des Créateurs belges"
+               data-desc="Marketplace légère pour créateurs belges : arborescence claire, fiches produits simples, paiement externe. Mise en commun des stocks et logistique réduite pour accélérer l’onboarding. SEO de base + pages ultra rapides.">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="web" data-id="sw">
-            <div class="project-media" aria-hidden="true"></div>
+          <article class="project-card" data-tags="web">
+            <div class="project-media" data-code="SW" aria-hidden="true"></div>
             <h3>SuperWAAD</h3>
             <p>Refonte complète de la charte graphique et du site web pour un ébéniste local</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <a class="overlay open-project" href="#" data-title="SuperWAAD"
+               data-desc="Refonte identité + site : palette sobre, typographies lisibles, pages services très visuelles, prises de contact simplifiées. Optimisations perfs (assets minifiés, images WebP) et suivi de leads.">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="social" data-id="rca">
-            <div class="project-media" aria-hidden="true"></div>
+          <article class="project-card" data-tags="social">
+            <div class="project-media" data-code="RCA" aria-hidden="true"></div>
             <h3>Repair Café Asty-Moulin</h3>
             <p>Création d'un Repair Café dans mon enseignement secondaire (Young Changemaker Ashoka Belgium)</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <a class="overlay open-project" href="#" data-title="Repair Café Asty-Moulin"
+               data-desc="Mise en place du Repair Café de l’école : équipe, matériel de base, affichage sécurité, procédures d’accueil. Ateliers réguliers, suivi des réparations et communication locale.">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="ingweb,social" data-id="lab">
-            <div class="project-media" aria-hidden="true"></div>
+          <article class="project-card" data-tags="ingweb,social">
+            <div class="project-media" data-code="LAB" aria-hidden="true"></div>
             <h3>Construction d'un labo d'électricité en Italie</h3>
             <p>Construction d'un laboratoire d'électricité (Erasmus+) pour former aux métiers de demain</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <a class="overlay open-project" href="#" data-title="Labo d'électricité (Erasmus+)"
+               data-desc="Conception et montage d’un petit labo : postes sécurisés, instrumentation de base, kits pédagogiques. Documentation pas-à-pas et transfert de compétences aux équipes locales.">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="social" data-id="ce">
-            <div class="project-media" aria-hidden="true"></div>
+          <article class="project-card" data-tags="social">
+            <div class="project-media" data-code="CE" aria-hidden="true"></div>
             <h3>Conseil Étudiant</h3>
             <p>Investissement dans la représentation étudiante de mon EES pour accompagner les étudiants</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <a class="overlay open-project" href="#" data-title="Conseil Étudiant"
+               data-desc="Organisation d’événements utiles (rentrée, examens, entraide), centralisation des informations pratiques, médiation et remontée des besoins auprès de l’administration.">Voir le projet →</a>
           </article>
 
-          <article class="project-card" data-tags="social" data-id="org">
-            <div class="project-media" aria-hidden="true"></div>
+          <article class="project-card" data-tags="social">
+            <div class="project-media" data-code="ORG" aria-hidden="true"></div>
             <h3>Organisations étudiantes</h3>
             <p>Engagement pour amener débat, esprit critique et solidarité auprès des étudiants</p>
-            <a class="overlay" href="#" data-i18n="projects.view">Voir le projet →</a>
+            <a class="overlay open-project" href="#" data-title="Organisations étudiantes"
+               data-desc="Animation de collectifs étudiants : débats, ateliers, entraide. Objectif : rendre les sujets techniques compréhensibles, créer des espaces d’action concrets, tisser des liens durables.">Voir le projet →</a>
           </article>
         </div>
       </div>
@@ -226,10 +232,10 @@
     <section id="services" class="section" aria-label="Services">
       <div class="container cards-3">
         <h2 class="full" data-i18n="services.title">Services</h2>
-        <article class="card"><h3 data-i18n="services.items.0.title">Sites WordPress collaboratifs</h3><p data-i18n="services.items.0.desc">De l’idée au site livré : design clair, contenus optimisés, formation à la prise en main. Vous repartez autonome.</p></article>
-        <article class="card"><h3 data-i18n="services.items.1.title">Sites statiques rapides</h3><p data-i18n="services.items.1.desc">Pages ultra-performantes (SEO, accessibilité) déployées en quelques minutes sur Plesk. Zéro maintenance.</p></article>
-        <article class="card"><h3 data-i18n="services.items.2.title">Prototypage embarqué / Conseil tech</h3><p data-i18n="services.items.2.desc">Électronique, capteurs, intégration web : je fais décoller vos idées avec des preuves de concept mesurables.</p></article>
-        <div class="full"><a class="btn secondary magnet" href="#contact" data-i18n="services.ctaQuote">Demander un devis</a></div>
+        <article class="card"><h3>Sites WordPress collaboratifs</h3><p>De l’idée au site livré : design clair, contenus optimisés, formation à la prise en main. Vous repartez autonome.</p></article>
+        <article class="card"><h3>Sites statiques rapides</h3><p>Pages ultra-performantes (SEO, accessibilité) déployées en quelques minutes sur Plesk. Zéro maintenance.</p></article>
+        <article class="card"><h3>Prototypage embarqué / Conseil tech</h3><p>Électronique, capteurs, intégration web : je fais décoller vos idées avec des preuves de concept mesurables.</p></article>
+        <div class="full"><a class="btn secondary magnet" href="#contact">Demander un devis</a></div>
       </div>
     </section>
 
@@ -263,38 +269,38 @@
     </section>
   </main>
 
+  <!-- Modal projet -->
+  <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close="1"></div>
+    <div class="modal-dialog" role="document">
+      <button class="modal-close" aria-label="Fermer" data-close="1">×</button>
+      <h3 id="modalTitle"></h3>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <div class="socials" aria-label="Réseaux sociaux">
         <a class="ico" href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 20v-7h2.1l.3-2.6h-2.4v-1.6c0-.7.2-1.1 1.2-1.1h1.3V5.1c-.2 0-.9-.1-1.8-.1-1.8 0-3 .9-3 3.1v1.7H9v2.6h2.3V20h2.3z"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3H13.5V8.6c0-.9.3-1.6 1.7-1.6H16.8V4.3c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H8v3h2.4v8h3.1z"/></svg>
         </a>
-        <a class="ico" href="#" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+        <a class="ico" href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zm5.8-3.3a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2z"/></svg>
         </a>
-        <a class="ico" href="#" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4.1 0 4.9 2.7 4.9 6.2V24h-4v-7.1c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V24h-4V8z"/></svg>
+        <a class="ico" href="https://www.linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1-.02 5 2.5 2.5 0 0 1 .02-5zM3 8.98h4v12H3v-12zM9.5 8.98h3.8v1.65h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v6.31h-4v-5.6c0-1.33-.03-3.04-1.86-3.04-1.86 0-2.14 1.45-2.14 2.95v5.69h-4v-12z"/></svg>
         </a>
         <a class="ico" href="mailto:prenom.nom@etud.ecole.be" aria-label="Email scolaire">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h20v12H2z"/><path d="M2 6l10 7L22 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm2 .5V18h16V6.5l-8 5.2-8-5.2z"/></svg>
         </a>
       </div>
 
-      <a class="back-top" href="#accueil" data-i18n="footer.backToTop" aria-label="Haut de page">Haut de page</a>
+      <a class="back-top" href="#accueil">Haut de page</a>
 
       <p class="rights">© <span id="year"></span> Benjamin Reuland. Tous droits réservés.</p>
     </div>
   </footer>
-
-  <!-- Modal projets -->
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" aria-label="Fermer" data-close>×</button>
-      <h3 id="modalTitle"></h3>
-      <div class="modal-body"></div>
-    </div>
-  </div>
 
   <div id="cursor" aria-hidden="true"></div>
   <script>window.FORMSPREE_ENDPOINT="";</script>
