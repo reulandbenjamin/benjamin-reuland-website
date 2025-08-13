@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Benjamin Reuland — Ingenjörskap & webb",
+    "description": "Student i industriell ingenjörsvetenskap (elektronik/embedded) och webbutvecklare. Konkreta projekt, verklig effekt."
+  },
+  "nav": {
+    "home": "Hem",
+    "about": "Om",
+    "skills": "Kompetenser",
+    "projects": "Projekt",
+    "services": "Tjänster",
+    "contact": "Kontakt",
+    "legal": "Juridiskt"
+  },
+  "hero": {
+    "title": "Ingenjörskap & webb – i verklighetens tjänst.",
+    "subtitle": "Jag heter Benjamin, jag är student i industriell ingenjörsvetenskap, självlärd inom webben och engagerad för en bättre värld",
+    "ctaProjects": "Se mina projekt",
+    "ctaContact": "Kontakta mig"
+  },
+  "highlights": {
+    "student": "Ingenjörsstudent",
+    "studentDesc": "Jag studerar industriell ingenjörsvetenskap i Liège med inriktning elektronik och inbyggda system.",
+    "dev": "Webbutvecklare",
+    "devDesc": "Jag bygger snabba statiska webbplatser, webbutiker och SEO-optimerade sidor.",
+    "youth": "Samhälleligt engagemang",
+    "youthDesc": "Jag har engagerat mig i olika projekt med samma röda tråd: att förändra världen."
+  },
+  "about": {
+    "title": "Om",
+    "p1": "Jag heter Benjamin. Jag omvandlar konkreta behov till användbara lösningar: tydliga gränssnitt, pålitliga inbyggda system och snabba webbplatser.",
+    "p2": "Nyfiken och självgående: jag prototypar snabbt, mäter och förbättrar. Mitt mål är konkret effekt — för ideella, hantverkare och utbildningsprojekt.",
+    "goals": [
+      "Praktik inom elektronik/embedded",
+      "Frilansuppdrag webb",
+      "Pedagogiska partnerskap",
+      "Medborgarprojekt"
+    ]
+  },
+  "skills": {
+    "title": "Kompetenser",
+    "langs": "Språk",
+    "tools": "Verktyg",
+    "soft": "Soft skills",
+    "srLevel": "{label}: nivå {value}/5"
+  },
+  "projects": {
+    "title": "Projekt",
+    "filterAll": "Alla",
+    "filterWeb": "Webb",
+    "filterIngWeb": "Ingenjörskap & webb",
+    "filterSoc": "Socialt",
+    "items": [
+      {
+        "title": "Mini-marknad för belgiska skapare",
+        "desc": "Utveckling av en plattform som samlar mindre belgiska kreatörer",
+        "tags": [
+          "webb"
+        ]
+      },
+      {
+        "title": "SuperWAAD",
+        "desc": "Total omprofilering och webbplats för en lokal snickare",
+        "tags": [
+          "webb"
+        ]
+      },
+      {
+        "title": "Repair Café Asty-Moulin",
+        "desc": "Start av ett Repair Café på min gymnasieskola (Ashoka Belgium Young Changemaker)",
+        "tags": [
+          "socialt"
+        ]
+      },
+      {
+        "title": "El-labb i Italien",
+        "desc": "Bygge av ett Erasmus+ el-laboratorium för framtidens yrken",
+        "tags": [
+          "ingweb",
+          "socialt"
+        ]
+      },
+      {
+        "title": "Studentråd",
+        "desc": "Engagemang i studentrepresentationen för att stötta studenter",
+        "tags": [
+          "socialt"
+        ]
+      },
+      {
+        "title": "Studentorganisationer",
+        "desc": "Insatser för debatt, kritiskt tänkande och solidaritet",
+        "tags": [
+          "socialt"
+        ]
+      }
+    ],
+    "view": "Voir le projet →"
+  },
+  "services": {
+    "title": "Tjänster",
+    "items": [
+      {
+        "title": "WordPress i samarbete",
+        "desc": "Från idé till lansering: tydlig design, optimerad text och onboarding. Du behåller kontrollen."
+      },
+      {
+        "title": "Snabba statiska webbplatser",
+        "desc": "Ultrasnabba sidor (SEO, tillgänglighet) på Plesk inom några minuter. Ingen drift."
+      },
+      {
+        "title": "Embedded-prototyper / Tech-råd",
+        "desc": "Elektronik, sensorer, webbintegration: gör idéer till mätbara proof-of-concept."
+      }
+    ],
+    "ctaQuote": "Begär offert"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "name": "Namn",
+    "email": "E-post",
+    "message": "Meddelande",
+    "consent": "Jag godkänner att mina uppgifter används för att kontakta mig (GDPR).",
+    "send": "Skicka",
+    "success": "Tack! Ditt meddelande har skickats.",
+    "error": "Oj, något gick fel. Försök igen."
+  },
+  "footer": {
+    "rights": "© {year} Benjamin Reuland. Alla rättigheter förbehållna.",
+    "backToTop": "Till toppen"
+  }
+}

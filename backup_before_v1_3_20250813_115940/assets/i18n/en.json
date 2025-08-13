@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Benjamin Reuland — Engineering & Web",
+    "description": "Industrial engineering student (electronics/embedded) and web developer. Concrete projects, real impact."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact",
+    "legal": "Legal"
+  },
+  "hero": {
+    "title": "Engineering & Web, built for the real world.",
+    "subtitle": "My name is Benjamin, I'm an industrial engineering student, self-taught in the web and committed to a better world",
+    "ctaProjects": "See my projects",
+    "ctaContact": "Contact me"
+  },
+  "highlights": {
+    "student": "Engineering student",
+    "studentDesc": "I study industrial engineering in Liège, specializing in electronics and embedded systems.",
+    "dev": "Web developer",
+    "devDesc": "I build fast static sites, online stores and SEO-optimised pages.",
+    "youth": "Social engagement",
+    "youthDesc": "I’ve invested in various projects with the same purpose: changing the world."
+  },
+  "about": {
+    "title": "About",
+    "p1": "I’m Benjamin. I turn real needs into useful solutions: clear interfaces, reliable embedded systems and fast websites.",
+    "p2": "Curious and hands-on, I prototype quickly, measure and improve. My aim is tangible impact for nonprofits, artisans and education projects.",
+    "goals": [
+      "Internship in electronics/embedded",
+      "Freelance web missions",
+      "Educational partnerships",
+      "Civic projects"
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "langs": "Languages",
+    "tools": "Tools",
+    "soft": "Soft skills",
+    "srLevel": "{label}: level {value}/5"
+  },
+  "projects": {
+    "title": "Projects",
+    "filterAll": "All",
+    "filterWeb": "Web",
+    "filterIngWeb": "Engineering & web",
+    "filterSoc": "Social",
+    "items": [
+      {
+        "title": "Mini Market of Belgian Creators",
+        "desc": "Development of a platform bringing together small Belgian makers",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "SuperWAAD",
+        "desc": "Complete redesign of the brand identity and website for a local cabinetmaker",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "Repair Café Asty-Moulin",
+        "desc": "Creation of a Repair Café at my secondary school (Ashoka Belgium Young Changemaker)",
+        "tags": [
+          "social"
+        ]
+      },
+      {
+        "title": "Electricity lab in Italy",
+        "desc": "Built an Erasmus+ electricity lab to train students for tomorrow’s jobs",
+        "tags": [
+          "ingweb",
+          "social"
+        ]
+      },
+      {
+        "title": "Student Council",
+        "desc": "Active investment in student representation to support peers",
+        "tags": [
+          "social"
+        ]
+      },
+      {
+        "title": "Student organizations",
+        "desc": "Involvement to foster debate, critical thinking and solidarity",
+        "tags": [
+          "social"
+        ]
+      }
+    ],
+    "view": "Voir le projet →"
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      {
+        "title": "Collaborative WordPress sites",
+        "desc": "From idea to launch: clear design, optimized copy, handover training. You stay in control."
+      },
+      {
+        "title": "Fast static websites",
+        "desc": "Ultra-fast pages (SEO, accessibility) deployed in minutes on Plesk. Zero maintenance."
+      },
+      {
+        "title": "Embedded prototyping / Tech advisory",
+        "desc": "Electronics, sensors, web integration: turn ideas into measurable proof-of-concepts."
+      }
+    ],
+    "ctaQuote": "Request a quote"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "consent": "I agree that my data will be used to contact me (GDPR).",
+    "send": "Send",
+    "success": "Thanks! Your message has been sent.",
+    "error": "Oops, something went wrong. Try again."
+  },
+  "footer": {
+    "rights": "© {year} Benjamin Reuland. All rights reserved.",
+    "backToTop": "Back to top"
+  }
+}

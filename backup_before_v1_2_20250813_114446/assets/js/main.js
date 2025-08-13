@@ -34,8 +34,8 @@ async function loadI18n(lang){
   try{
     const res=await fetch(`/assets/i18n/${lang}.json`,{cache:'no-store'});
     const dict=await res.json();
-    document.title=dict.meta?.title||document.title;
-    const metaDesc=document.querySelector('meta[name="description"]'); if(dict.meta?.description) metaDesc?.setAttribute('content',dict.meta.description);
+    document.title=dict.meta.title;
+    const metaDesc=document.querySelector('meta[name="description"]'); metaDesc?.setAttribute('content',dict.meta.description);
     $$('[data-i18n]').forEach(el=>{
       const key=el.getAttribute('data-i18n');
       const value=key.split('.').reduce((a,k)=>a?.[k],dict);
@@ -46,21 +46,20 @@ async function loadI18n(lang){
 }
 loadI18n(currentLang);
 
-/* HERO → afficher ~90% de la première carte au 1er écran
-   → on ajuste dynamiquement la min-height du hero (au lieu d'ajouter du padding) */
-function adjustHeroLayout(){
+/* HERO → rendre 90% des cartes visibles au premier écran */
+function adjustHeroGap(){
   const hero=$('.hero'); const highlights=$('#highlights');
   if(!hero || !highlights) return;
   const headerH=$('.site-header')?.offsetHeight||0;
   const firstCard=$('#highlights .card'); if(!firstCard) return;
   const cardH=firstCard.offsetHeight;
   const vh=window.innerHeight;
-  const target = Math.max(320, vh - 0.9*cardH - headerH); // 90% visibles
-  hero.style.minHeight = `${Math.round(target)}px`;
-  hero.style.setProperty('--hero-pad-bottom','0px');
+  /* On veut que le haut de #highlights soit à vh - 90%*cardH */
+  const desiredTop = Math.max(0, vh - 0.9*cardH - headerH);
+  hero.style.setProperty('--hero-pad-bottom', `${Math.round(desiredTop)}px`);
 }
-window.addEventListener('load', adjustHeroLayout);
-window.addEventListener('resize', adjustHeroLayout);
+window.addEventListener('load', adjustHeroGap);
+window.addEventListener('resize', adjustHeroGap);
 
 /* CANVAS PARTICLES (pause si reduce motion) */
 const prefersReduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -110,34 +109,6 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
     }
   });
 }));
-
-/* MODAL projets (ouvre sur "Voir le projet", empêche # de remonter en haut) */
-const modal=$('#projectModal');
-const modalTitle=$('.modal-title', modal);
-const modalDesc=$('.modal-desc', modal);
-function openModal(title, desc){
-  modalTitle.textContent = title || '';
-  modalDesc.textContent = desc || '';
-  modal.classList.add('is-open');
-  document.body.classList.add('modal-open');
-  document.body.style.overflow='hidden';
-}
-function closeModal(){
-  modal.classList.remove('is-open');
-  document.body.classList.remove('modal-open');
-  document.body.style.overflow='';
-}
-modal?.addEventListener('click',(e)=>{ if(e.target.hasAttribute('data-close')) closeModal(); });
-window.addEventListener('keydown',e=>{ if(e.key==='Escape' && modal.classList.contains('is-open')) closeModal(); });
-$$('.project-card .overlay').forEach(a=>{
-  a.addEventListener('click',(e)=>{
-    e.preventDefault();
-    const card=e.currentTarget.closest('.project-card');
-    const title=$('h3',card)?.textContent||'Projet';
-    const detail=card?.dataset?.detail||$('p',card)?.textContent||'';
-    openModal(title, detail);
-  });
-});
 
 /* CONTACT — Formspree + hCaptcha (optionnels) */
 const FORMSPREE=window.FORMSPREE_ENDPOINT||"";

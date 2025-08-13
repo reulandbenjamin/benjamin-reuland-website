@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "title": "Benjamin Reuland — Ingenieurschap & web",
+    "description": "Student industrieel ingenieur (elektronica/embedded) en webontwikkelaar. Concrete projecten, echte impact."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Over",
+    "skills": "Vaardigheden",
+    "projects": "Projecten",
+    "services": "Diensten",
+    "contact": "Contact",
+    "legal": "Juridisch"
+  },
+  "hero": {
+    "title": "Ingenieurschap & web, in dienst van het echte.",
+    "subtitle": "Ik heet Benjamin, ik ben student industrieel ingenieur, autodidact in het web en geëngageerd voor een betere wereld",
+    "ctaProjects": "Bekijk mijn projecten",
+    "ctaContact": "Contact opnemen"
+  },
+  "highlights": {
+    "student": "Student ingenieurswetenschappen",
+    "studentDesc": "Ik studeer industrieel ingenieur in Luik met specialisatie elektronica en embedded systemen.",
+    "dev": "Webontwikkelaar",
+    "devDesc": "Ik bouw snelle statische sites, webshops en SEO-geoptimaliseerde pagina’s.",
+    "youth": "Maatschappelijke betrokkenheid",
+    "youthDesc": "Ik heb me ingezet in diverse projecten met één doel: de wereld veranderen."
+  },
+  "about": {
+    "title": "Over",
+    "p1": "Ik ben Benjamin. Ik vertaal echte noden naar bruikbare oplossingen: heldere interfaces, betrouwbare embedded systemen en snelle websites.",
+    "p2": "Nieuwsgierig en hands-on: ik maak snel prototypes, meet en verbeter. Mijn rode draad: tastbare impact — voor verenigingen, ambachtslieden en onderwijsprojecten.",
+    "goals": [
+      "Stage elektronica/embedded",
+      "Freelance webopdrachten",
+      "Educatieve partnerschappen",
+      "Burgerprojecten"
+    ]
+  },
+  "skills": {
+    "title": "Vaardigheden",
+    "langs": "Talen",
+    "tools": "Tools",
+    "soft": "Soft skills",
+    "srLevel": "{label}: niveau {value}/5"
+  },
+  "projects": {
+    "title": "Projecten",
+    "filterAll": "Alle",
+    "filterWeb": "Web",
+    "filterIngWeb": "Engineering & web",
+    "filterSoc": "Sociaal",
+    "items": [
+      {
+        "title": "Mini Markt van Belgische Makers",
+        "desc": "Ontwikkeling van een platform dat kleine Belgische makers samenbrengt",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "SuperWAAD",
+        "desc": "Volledige rebranding en website-revisie voor een lokale schrijnwerker",
+        "tags": [
+          "web"
+        ]
+      },
+      {
+        "title": "Repair Café Asty-Moulin",
+        "desc": "Oprichting van een Repair Café op mijn secundaire school (Ashoka Belgium Young Changemaker)",
+        "tags": [
+          "sociaal"
+        ]
+      },
+      {
+        "title": "Elektriciteitslab in Italië",
+        "desc": "Bouw van een Erasmus+ elektriciteitslab om jongeren op te leiden voor de banen van morgen",
+        "tags": [
+          "ingweb",
+          "sociaal"
+        ]
+      },
+      {
+        "title": "Studentenraad",
+        "desc": "Inzet in de studentenvertegenwoordiging om studenten te ondersteunen",
+        "tags": [
+          "sociaal"
+        ]
+      },
+      {
+        "title": "Studentenorganisaties",
+        "desc": "Inzet voor debat, kritisch denken en solidariteit",
+        "tags": [
+          "sociaal"
+        ]
+      }
+    ],
+    "view": "Voir le projet →"
+  },
+  "services": {
+    "title": "Diensten",
+    "items": [
+      {
+        "title": "Samenwerkende WordPress-sites",
+        "desc": "Van idee tot live: helder design, geoptimaliseerde copy, training. Jij houdt de controle."
+      },
+      {
+        "title": "Snelle statische sites",
+        "desc": "Supersnelle pagina’s (SEO, toegankelijkheid) binnen minuten op Plesk. Geen onderhoud."
+      },
+      {
+        "title": "Embedded prototyping / Tech-advies",
+        "desc": "Elektronica, sensoren, webintegratie: ideeën worden meetbare proof-of-concepten."
+      }
+    ],
+    "ctaQuote": "Offerte aanvragen"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Naam",
+    "email": "E-mail",
+    "message": "Bericht",
+    "consent": "Ik ga ermee akkoord dat mijn gegevens worden gebruikt om mij te contacteren (AVG).",
+    "send": "Versturen",
+    "success": "Bedankt! Je bericht is verzonden.",
+    "error": "Oeps, er ging iets mis. Probeer opnieuw."
+  },
+  "footer": {
+    "rights": "© {year} Benjamin Reuland. Alle rechten voorbehouden.",
+    "backToTop": "Naar boven"
+  }
+}
