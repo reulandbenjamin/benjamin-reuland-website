@@ -107,7 +107,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 }
 
 /* empilement régulier des 3 barres */
-.nav-toggle.strawberry .line + .line{ margin-top:3px; }
+.nav-toggle.strawberry .line + .line{ margin-top:4px; }
 
 /* état FERMÉ : strawberry (barres de longueur différente) */
 .nav-toggle.strawberry .l1{ width:24px; }
@@ -116,14 +116,14 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 /* état OUVERT : croix centrée, barres = mêmes longueurs */
 .nav-open .nav-toggle.strawberry .l1{
-  width:18px;
+  width:17px;
   transform: translateY(15px) rotate(45deg);
 }
 .nav-open .nav-toggle.strawberry .l2{
   opacity:0;
 }
 .nav-open .nav-toggle.strawberry .l3{
-  width:18px;
+  width:17px;
   transform: translateY(-15px) rotate(-45deg);
 }
 
