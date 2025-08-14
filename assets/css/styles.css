@@ -84,7 +84,15 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 /* nav list */
 .nav{justify-self:start;align-self:center;display:flex;align-items:center}
-.nav-list{height:100%;display:flex;align-items:center}
+.nav-list{
+  list-style: none;   /* enlève les puces */
+  margin: 0;          /* supprime la marge par défaut du <ul> */
+  padding: 0;         /* supprime le padding par défaut du <ul> */
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .nav-list a{
   display: flex;
   align-items: center;
