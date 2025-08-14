@@ -76,8 +76,8 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .header-actions{
   display:flex;
   align-items:center;
-  height: 100%; /* <-- à ajouter */
-  line-height:1;
+  height: var(--header-h);
+  line-height: var(--header-h); /* même boîte verticale pour tout */
 }
 
 .logo{font-family:var(--ff-title);font-weight:700;letter-spacing:.02em;background:linear-gradient(90deg,var(--brand-rose-300),var(--brand-mint-200));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.25rem;justify-self:center;display:flex;align-items:center;}
@@ -85,23 +85,20 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 /* nav list */
 .nav{justify-self:start;align-self:center;display:flex;align-items:center}
 .nav-list{
-  list-style: none;   /* enlève les puces */
-  margin: 0;          /* supprime la marge par défaut du <ul> */
-  padding: 0;         /* supprime le padding par défaut du <ul> */
-  height: 100%;
-  display: flex;
-  align-items: center;
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  align-items:center;
+  gap:clamp(.25rem,.8vw,.6rem);
+  height: var(--header-h);
 }
-
 .nav-list a{
-  display: flex;
-  align-items: center;
-  height: 100%;
-  line-height: 1;
-  padding-top: 0;          /* pas de padding vertical */
-  padding-bottom: 0;
-  padding-left: .6rem;     /* garde l’horizontal */
-  padding-right: .6rem;
+  display:inline-flex;
+  align-items:center;
+  line-height: var(--header-h);  /* centrage vertical parfait */
+  height:auto;
+  padding:0 .6rem;               /* horizontal seulement */
 }
 .nav-list a:hover{background:color-mix(in srgb, var(--card), transparent 40%)}
 .nav-toggle{display:inline-grid;place-items:center;background:transparent;border:1px solid var(--border);border-radius:8px;width:40px;height:30px;margin-left:6px}
