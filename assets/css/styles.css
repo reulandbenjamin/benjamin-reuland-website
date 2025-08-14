@@ -65,7 +65,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .header-inner.grid-3{
   display:grid;
   grid-template-columns:44px 1fr 44px;
-  align-items:stretch;
+  align-items:center;          /* centre verticalement les 3 colonnes */
   gap:12px;
   height:var(--header-h);
   padding:0;
@@ -73,17 +73,17 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 .logo,
 .nav,
-.header-actions {
-  display: flex;
-  align-items: center;   /* centrage vertical via flex */
-  height:auto;          /* on retire la hauteur fixe */
-  line-height: 1;        /* empêche le décalage vertical par la line-height */
+.header-actions{
+  display:flex;
+  align-items:center;          /* centre le contenu */
+  height:var(--header-h);      /* même boîte de 64px pour les 3 colonnes */
+  line-height:1;
 }
 
 .logo{font-family:var(--ff-title);font-weight:700;letter-spacing:.02em;background:linear-gradient(90deg,var(--brand-rose-300),var(--brand-mint-200));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.25rem;justify-self:center;display:flex;align-items:center;}
 
 /* nav list */
-.nav{justify-self:start;align-self:stretch;display:flex;align-items:center}
+.nav{justify-self:start;align-self:center;display:flex;align-items:center}
 .nav-list{
   list-style:none;
   margin:0;
