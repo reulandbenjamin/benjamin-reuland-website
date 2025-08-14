@@ -76,7 +76,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .header-actions {
   display: flex;
   align-items: center;   /* centrage vertical via flex */
-  height: 0px;          /* on retire la hauteur fixe */
+  height:auto;          /* on retire la hauteur fixe */
   line-height: 1;        /* empêche le décalage vertical par la line-height */
 }
 
