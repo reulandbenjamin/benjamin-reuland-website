@@ -65,19 +65,21 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .header-inner.grid-3{
   display:grid;
   grid-template-columns:44px 1fr 44px;
-  align-items:center;
+  align-items:center; /* <-- déjà présent mais important */
   gap:12px;
-  height:var(--header-h); /* hauteur fixe pour un centrage garanti */
+  height:var(--header-h);
   padding:0;
 }
+
 .logo,
 .nav,
 .header-actions{
   display:flex;
   align-items:center;
-  height:var(--header-h);
+  height: 100%; /* <-- à ajouter */
   line-height:1;
 }
+
 .logo{font-family:var(--ff-title);font-weight:700;letter-spacing:.02em;background:linear-gradient(90deg,var(--brand-rose-300),var(--brand-mint-200));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.25rem;justify-self:center;display:flex;align-items:center;}
 
 /* nav list */
