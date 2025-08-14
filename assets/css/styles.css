@@ -65,7 +65,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .header-inner.grid-3{
   display:grid;
   grid-template-columns:44px 1fr 44px;
-  align-items:center; /* <-- déjà présent mais important */
+  align-items:stretch;
   gap:12px;
   height:var(--header-h);
   padding:0;
@@ -83,7 +83,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 .logo{font-family:var(--ff-title);font-weight:700;letter-spacing:.02em;background:linear-gradient(90deg,var(--brand-rose-300),var(--brand-mint-200));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.25rem;justify-self:center;display:flex;align-items:center;}
 
 /* nav list */
-.nav{justify-self:start;align-self:center;display:flex;align-items:center}
+.nav{justify-self:start;align-self:stretch;display:flex;align-items:center}
 .nav-list{
   list-style:none;
   margin:0;
@@ -91,13 +91,13 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
   display:flex;
   align-items:center;
   gap:clamp(.25rem,.8vw,.6rem);
-  height: var(--header-h);
+  height: 100%;
 }
 .nav-list a{
-  display:inline-flex;
+  display:flex;
   align-items:center;
-  line-height: var(--header-h);  /* centrage vertical parfait */
-  height:auto;
+  line-height: 1;  /* centrage vertical parfait */
+  height:100%;
   padding:0 .6rem;               /* horizontal seulement */
 }
 .nav-list a:hover{background:color-mix(in srgb, var(--card), transparent 40%)}
