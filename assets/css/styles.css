@@ -124,7 +124,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 }
 .nav-open .nav-toggle.strawberry .l3{
   width:15px;
-  transform: translateY(-11px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 .header-actions{display:flex;align-items:center;gap:.5rem;justify-self:end;margin-right:6px}
