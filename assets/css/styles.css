@@ -73,11 +73,11 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 .logo,
 .nav,
-.header-actions{
-  display:flex;
-  align-items:center;
-  height: var(--header-h);
-  line-height: var(--header-h); /* même boîte verticale pour tout */
+.header-actions {
+  display: flex;
+  align-items: center;   /* centrage vertical via flex */
+  height: auto;          /* on retire la hauteur fixe */
+  line-height: 1;        /* empêche le décalage vertical par la line-height */
 }
 
 .logo{font-family:var(--ff-title);font-weight:700;letter-spacing:.02em;background:linear-gradient(90deg,var(--brand-rose-300),var(--brand-mint-200));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.25rem;justify-self:center;display:flex;align-items:center;}
