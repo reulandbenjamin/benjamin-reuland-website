@@ -129,14 +129,7 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 /* empilement régulier des 3 barres */
 .nav-toggle.strawberry .line + .line{ margin-top:4px; }
-
-/* état FERMÉ : strawberry (barres de longueur différente) */
-.nav-toggle.strawberry .l1{ width:24px; }
-.nav-toggle.strawberry .l2{ width:16px; }
-.nav-toggle.strawberry .l3{ width:10px; }
-
-/* état OUVERT : croix centrée, barres = mêmes longueurs */
-.nav-open .nav-toggle.strawberry .l1 {
+@@ -135,170 +140,166 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
   width: 18px;
   transform: translateY(10.75px) rotate(45deg);
 }
@@ -301,5 +294,3 @@ input:focus,textarea:focus,select:focus{border-color:var(--accent)}
 
 
 .site-footer .rights{justify-self:end}
-
-
