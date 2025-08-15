@@ -145,16 +145,19 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 
 .header-actions{display:flex;align-items:center;gap:.5rem;justify-self:end;margin-right:6px}
 .lang-select {
-  height: 40px;
-  line-height: 40px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  box-sizing: border-box;
+  height: 40px !important;
+  line-height: 40px !important;
+  padding: 0 0.6rem !important;
+  margin: 0 !important;
+  font-size: 0.95rem;
+  appearance: none;
+  -webkit-appearance: none;
   display: flex;
   align-items: center;
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
 }
+
 
 /* Desktop layout */
 @media (min-width: 900px){
