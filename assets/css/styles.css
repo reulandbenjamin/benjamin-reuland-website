@@ -160,6 +160,15 @@ p{line-height:var(--lh-normal);margin:0 0 16px;font-size:var(--fs-body)}
 @media (min-width: 900px){
   .header-inner.grid-3{grid-template-columns:auto 1fr auto}
   .logo{grid-column:1;justify-self:start}
+  .logo span {
+  display: inline-block;
+  line-height: 1;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  padding-top: 2px; /* ajuste le centrage optique */
+}
+
   .nav{grid-column:2;justify-self:center}
   .nav-toggle{display:none}
   .nav-list{display:flex;gap:clamp(.25rem,.8vw,.6rem);flex-wrap:wrap;overflow:visible}
