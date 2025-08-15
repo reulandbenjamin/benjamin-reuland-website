@@ -28,7 +28,9 @@
 
   <header class="site-header" role="banner">
     <div class="container header-inner grid-3">
-      <!-- Mobile: burger à gauche, logo centré, actions à droite | Desktop: logo gauche, nav milieu, actions droite -->
+      <!-- Mobile: burger à gauche, logo centré, langue à droite | Desktop: logo gauche, nav centre, actions droite -->
+      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
+
       <nav class="nav" aria-label="Navigation principale">
         <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
           <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
@@ -43,12 +45,10 @@
         </ul>
       </nav>
 
-      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
-
       <div class="header-actions">
         <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
         <label for="langSelect" class="sr-only">Langue</label>
-        <select id="langSelect" class="lang-select" aria-label="Changer de langue">
+        <select id="langSelect" name="lang" class="lang-select" aria-label="Changer de langue">
           <option value="fr" selected>FR</option>
           <option value="en">EN</option>
           <option value="de">DE</option>
@@ -266,7 +266,7 @@
             </select>
           </div>
 
-          <div class="form-field w-95">
+          <div class="form-field w-100">
             <label for="message">Message*</label>
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
