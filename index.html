@@ -24,14 +24,11 @@
   <script src="https://www.google.com/recaptcha/api.js?render=6LcrbygnAAAAAKvyMs6bpkC4jnoewlX0K8MPV6P5"></script>
 </head>
 <body>
-  <!-- Ajouter la classe "no-desktop-nav" sur <body> pour un en-tête sans navigation sur desktop -->
   <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <!-- Ajouter la classe "compact" à .site-header pour une version sans navigation sur desktop -->
   <header class="site-header" role="banner">
     <div class="container header-inner grid-3">
-      <!-- Mobile: burger à gauche, logo centré, langue à droite | Desktop: logo gauche, nav centre, actions droite -->
-      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
+      <!-- Mobile: burger à gauche, logo centré, actions à droite | Desktop: logo gauche, nav milieu, actions droite -->
       <nav class="nav" aria-label="Navigation principale">
         <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
           <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
@@ -46,10 +43,12 @@
         </ul>
       </nav>
 
+      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
+
       <div class="header-actions">
         <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
         <label for="langSelect" class="sr-only">Langue</label>
-        <select id="langSelect" name="lang" class="lang-select" aria-label="Changer de langue">
+        <select id="langSelect" class="lang-select" aria-label="Changer de langue">
           <option value="fr" selected>FR</option>
           <option value="en">EN</option>
           <option value="de">DE</option>
@@ -66,7 +65,7 @@
       <canvas id="bg-canvas" aria-hidden="true"></canvas>
       <div class="container hero-inner">
         <h1 class="hero-title" data-i18n="hero.title">Ingénierie & Web, au service du réel.</h1>
-        <p class="hero-sub" data-i18n="hero.subtitle">Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour construire un monde meilleur</p>
+        <p class="hero-sub" data-i18n="hero.subtitle">Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour un monde meilleur</p>
         <div class="hero-ctas">
           <a class="btn primary magnet" href="#projets" data-i18n="hero.ctaProjects">Voir mes projets</a>
           <a class="btn ghost magnet" href="#contact" data-i18n="hero.ctaContact">Me contacter</a>
@@ -79,15 +78,15 @@
       <div class="container cards-3">
         <article class="card">
           <h3 data-i18n="highlights.student">Étudiant en ingénierie</h3>
-          <p data-i18n="highlights.studentDesc">J'étudie l’ingénierie industrielle à la Huate Ecole de la Province de Liège, je me spécialise en électronique et systèmes embarqués.</p>
+          <p data-i18n="highlights.studentDesc">J'étudie l’ingénierie industrielle à Liège, je me spécialise en électronique et systèmes embarqués.</p>
         </article>
         <article class="card">
           <h3 data-i18n="highlights.dev">Développeur Web</h3>
-          <p data-i18n="highlights.devDesc">Je développe des sites web complets, statiques (onepage), des boutiques en ligne et des pages performantes optimisées SEO.</p>
+          <p data-i18n="highlights.devDesc">Je développe des sites web statiques, des boutiques en ligne et des pages performantes optimisées SEO.</p>
         </article>
         <article class="card">
           <h3 data-i18n="highlights.youth">Engagement sociétal</h3>
-          <p data-i18n="highlights.youthDesc">J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde. Parce que demain nous appartient.</p>
+          <p data-i18n="highlights.youthDesc">J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde.</p>
         </article>
       </div>
     </section>
@@ -267,7 +266,7 @@
             </select>
           </div>
 
-          <div class="form-field w-100">
+          <div class="form-field w-95">
             <label for="message">Message*</label>
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
