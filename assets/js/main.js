@@ -230,6 +230,7 @@ form?.addEventListener('submit',async e=>{
 const cursor=$('#cursor'); const coarse=window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
 const reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(cursor && !coarse && !reduce){
+  document.body.classList.add('has-custom-cursor');
   window.addEventListener('pointermove',e=>{ cursor.style.opacity='1'; cursor.style.left=e.clientX+'px'; cursor.style.top=e.clientY+'px'; });
   window.addEventListener('pointerdown',()=> cursor.style.transform='translate(-50%,-50%) scale(.9)');
   window.addEventListener('pointerup',()=> cursor.style.transform='translate(-50%,-50%) scale(1)');
