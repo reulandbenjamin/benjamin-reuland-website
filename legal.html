@@ -6,15 +6,22 @@
   <title>Mentions légales — Benjamin Reuland</title>
   <meta name="description" content="Mentions légales et politique de confidentialité du site benjamin-reuland.be." />
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
+  <!-- Ajouter la classe "no-desktop-nav" sur <body> pour un en-tête sans navigation sur desktop -->
   <a class="skip-link" href="#main">Aller au contenu</a>
   <header class="site-header" role="banner">
     <div class="container header-inner grid-3">
       <a class="logo" href="/" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
       <nav class="nav" aria-label="Navigation principale">
-        <ul class="nav-list nav-legal">
+        <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
+          <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
+        </button>
+        <ul id="primary-nav" class="nav-list">
           <li><a href="/">Accueil</a></li>
           <li><a href="/#a-propos">À propos</a></li>
           <li><a href="/#services">Services</a></li>
@@ -22,7 +29,15 @@
         </ul>
       </nav>
       <div class="header-actions">
-        <a class="btn icon" href="/"><span aria-hidden="true">←</span></a>
+        <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
+        <label for="langSelect" class="sr-only">Langue</label>
+        <select id="langSelect" class="lang-select" aria-label="Changer de langue">
+          <option value="fr" selected>FR</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="nl">NL</option>
+          <option value="se">SE</option>
+        </select>
       </div>
     </div>
   </header>
@@ -70,6 +85,6 @@
       <p class="rights">© <span id="year"></span> Benjamin Reuland. Tous droits réservés.</p>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>

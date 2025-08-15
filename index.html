@@ -24,11 +24,14 @@
   <script src="https://www.google.com/recaptcha/api.js?render=6LcrbygnAAAAAKvyMs6bpkC4jnoewlX0K8MPV6P5"></script>
 </head>
 <body>
+  <!-- Ajouter la classe "no-desktop-nav" sur <body> pour un en-tête sans navigation sur desktop -->
   <a class="skip-link" href="#main">Aller au contenu</a>
 
   <header class="site-header" role="banner">
     <div class="container header-inner grid-3">
-      <!-- Mobile: burger à gauche, logo centré, actions à droite | Desktop: logo gauche, nav milieu, actions droite -->
+      <!-- Mobile: burger à gauche, logo centré, langue à droite | Desktop: logo gauche, nav centre, actions droite -->
+      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
+
       <nav class="nav" aria-label="Navigation principale">
         <button class="nav-toggle strawberry" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
           <span class="line l1"></span><span class="line l2"></span><span class="line l3"></span>
@@ -42,8 +45,6 @@
           <li><a data-i18n="nav.contact" href="#contact">Contact</a></li>
         </ul>
       </nav>
-
-      <a class="logo" href="#accueil" aria-label="Retour à l’accueil"><span aria-hidden="true">BR</span></a>
 
       <div class="header-actions">
         <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
