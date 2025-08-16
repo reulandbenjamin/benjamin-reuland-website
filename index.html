@@ -50,9 +50,18 @@
         <a class="btn ghost" href="#contact" data-i18n="hero.ctaContact">Me contacter</a>
       </div>
       <div class="hero-highlights">
-        <span data-i18n="hero.highlight1">Étudiant en ingénierie</span>
-        <span data-i18n="hero.highlight2">Développeur web</span>
-        <span data-i18n="hero.highlight3">Engagé citoyen</span>
+        <article class="highlight-card">
+          <h3>Étudiant en ingénierie</h3>
+          <p>J'étudie l’ingénierie industrielle à la Haute Ecole de la Province de Liège, je me spécialise en électronique et systèmes embarqués.</p>
+        </article>
+        <article class="highlight-card">
+          <h3>Développeur web</h3>
+          <p>Je développe des sites web répondant spécifiquement au besoin du projet concerné. Du site statique (one-page) aux boutiques en ligne ou même des plateformes de réservation, le tout optimisé SEO grâce aux intelligences artificielles.</p>
+        </article>
+        <article class="highlight-card">
+          <h3>Citoyen engagé</h3>
+          <p>J'ai eu l'occasion de m'investir dans divers projets ayant un même fil conducteur : changer le monde. Cela m'a valu la reconnaissance par Ashoka de Young Changemaker.</p>
+        </article>
       </div>
     </section>
 
@@ -78,11 +87,27 @@
 
     <section id="skills" class="section" aria-label="Compétences">
       <h2 data-i18n="skills.title">Compétences</h2>
-      <div class="skills">
-        <div class="skill"><span data-i18n="skills.html">HTML / CSS</span><div class="progress" data-progress="90"><div></div></div></div>
-        <div class="skill"><span data-i18n="skills.js">JavaScript</span><div class="progress" data-progress="80"><div></div></div></div>
-        <div class="skill"><span data-i18n="skills.embedded">Systèmes embarqués</span><div class="progress" data-progress="70"><div></div></div></div>
-        <div class="skill"><span data-i18n="skills.team">Travail d'équipe</span><div class="progress" data-progress="85"><div></div></div></div>
+      <div class="skills-groups">
+        <div class="skills-group">
+          <h3>Langages</h3>
+          <div class="skill"><span>Python</span><div class="progress" data-progress="90"><div></div></div></div>
+          <div class="skill"><span>C++</span><div class="progress" data-progress="85"><div></div></div></div>
+          <div class="skill"><span>HTML</span><div class="progress" data-progress="95"><div></div></div></div>
+          <div class="skill"><span>CSS</span><div class="progress" data-progress="90"><div></div></div></div>
+          <div class="skill"><span>JS</span><div class="progress" data-progress="80"><div></div></div></div>
+        </div>
+        <div class="skills-group">
+          <h3>Outils</h3>
+          <div class="skill"><span>WordPress</span><div class="progress" data-progress="80"><div></div></div></div>
+          <div class="skill"><span>Git</span><div class="progress" data-progress="75"><div></div></div></div>
+        </div>
+        <div class="skills-group">
+          <h3>Soft skills</h3>
+          <div class="skill"><span>Esprit critique</span><div class="progress" data-progress="90"><div></div></div></div>
+          <div class="skill"><span>Autodidacte</span><div class="progress" data-progress="85"><div></div></div></div>
+          <div class="skill"><span>Organisation</span><div class="progress" data-progress="80"><div></div></div></div>
+          <div class="skill"><span>Pédagogie</span><div class="progress" data-progress="75"><div></div></div></div>
+        </div>
       </div>
     </section>
 
@@ -98,21 +123,42 @@
     <section id="projects" class="section" aria-label="Projets">
       <h2 data-i18n="projects.title">Projets</h2>
       <p data-i18n="projects.desc">Quelques réalisations web et embarquées.</p>
+      <div class="project-filters">
+        <button class="filter active" data-filter="all">Tous</button>
+        <button class="filter" data-filter="web">Web</button>
+        <button class="filter" data-filter="hybrid">Ingénierie et web</button>
+        <button class="filter" data-filter="social">Social</button>
+      </div>
       <div class="cards projects">
-        <article class="card project" data-project="p1">
-          <img src="assets/img/project1.svg" alt="Site Onepage"/>
-          <h3 data-i18n="projects.p1.title">Site Onepage</h3>
-          <p data-i18n="projects.p1.short">Site statique optimisé SEO pour une association locale.</p>
+        <article class="card project" data-category="web">
+          <div class="badge">MMC</div>
+          <h3>Mini Marché des Créateurs belges</h3>
+          <p>Développement d’une plateforme de mise en commun de petits créateurs belges.</p>
         </article>
-        <article class="card project" data-project="p2">
-          <img src="assets/img/project2.svg" alt="Dashboard IoT"/>
-          <h3 data-i18n="projects.p2.title">Dashboard IoT</h3>
-          <p data-i18n="projects.p2.short">Visualisation de capteurs embarqués via API et interface web.</p>
+        <article class="card project" data-category="web">
+          <div class="badge">SW</div>
+          <h3>SuperW/AD</h3>
+          <p>Refonte complète de la charte graphique et du site web pour un événement local.</p>
         </article>
-        <article class="card project" data-project="p3">
-          <img src="assets/img/project3.svg" alt="Boutique en ligne"/>
-          <h3 data-i18n="projects.p3.title">Boutique en ligne</h3>
-          <p data-i18n="projects.p3.short">Intégration e-commerce légère pour artisan.</p>
+        <article class="card project" data-category="social">
+          <div class="badge">RCA</div>
+          <h3>Repair Café Asty-Moulin</h3>
+          <p>Création d’un Repair Café dans un collège et obtention du label Young Changemaker (Ashoka Belgium).</p>
+        </article>
+        <article class="card project" data-category="hybrid">
+          <div class="badge">LAB</div>
+          <h3>Construction d'un labo d'électricité en Italie</h3>
+          <p>Aide matérielle et humaine à la construction d'un EES pour proposer des activités pédagogiques.</p>
+        </article>
+        <article class="card project" data-category="social">
+          <div class="badge">CE</div>
+          <h3>Conseil Étudiant</h3>
+          <p>Engagement pour la représentation étudiante dans mon établissement.</p>
+        </article>
+        <article class="card project" data-category="social">
+          <div class="badge">ORG</div>
+          <h3>Organisations étudiantes</h3>
+          <p>Organisation d’événements pour les associations étudiantes de mon école.</p>
         </article>
       </div>
     </section>
@@ -128,26 +174,50 @@
     <section id="contact" class="section" aria-label="Contact">
       <h2 data-i18n="contact.title">Contact</h2>
       <form class="contact-form" novalidate>
-        <label for="lastname" data-i18n="contact.form.lastname">Nom*</label>
-        <input id="lastname" name="lastname" required autocomplete="family-name" />
-
-        <label for="firstname" data-i18n="contact.form.firstname">Prénom*</label>
-        <input id="firstname" name="firstname" required autocomplete="given-name" />
-
-        <label for="email" data-i18n="contact.form.email">Adresse e-mail*</label>
-        <input id="email" name="email" type="email" required autocomplete="email" />
-
-        <label for="phone" data-i18n="contact.form.phone">Téléphone</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" />
-
-        <label for="message" data-i18n="contact.form.message">Message*</label>
-        <textarea id="message" name="message" rows="6" required></textarea>
-
+        <div class="form-row">
+          <div class="field">
+            <label for="lastname" data-i18n="contact.form.lastname">Nom*</label>
+            <input id="lastname" name="lastname" required autocomplete="family-name" />
+          </div>
+          <div class="field">
+            <label for="firstname" data-i18n="contact.form.firstname">Prénom*</label>
+            <input id="firstname" name="firstname" required autocomplete="given-name" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="email" data-i18n="contact.form.email">Adresse e-mail*</label>
+            <input id="email" name="email" type="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="phone" data-i18n="contact.form.phone">Téléphone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="address">Adresse postale</label>
+            <input id="address" name="address" autocomplete="street-address" />
+          </div>
+          <div class="field">
+            <label for="country">Pays*</label>
+            <select id="country" name="country" required>
+              <option value="">— Sélectionner —</option>
+              <option value="be">Belgique</option>
+              <option value="fr">France</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row full">
+          <div class="field">
+            <label for="message" data-i18n="contact.form.message">Message*</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+        </div>
         <label class="consent">
           <input id="consent" type="checkbox" required />
           <span data-i18n="contact.form.consent">J’accepte que mes données soient utilisées pour me recontacter (RGPD).</span>
         </label>
-
         <button class="btn primary" type="submit" data-i18n="contact.form.submit">Envoyer</button>
       </form>
     </section>

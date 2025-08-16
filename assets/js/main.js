@@ -356,12 +356,12 @@ function initCanvas() {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
   dots = [];
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 100; i++) {
     dots.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5
+      vx: (Math.random() - 0.5) * 1.5,
+      vy: (Math.random() - 0.5) * 1.5
     });
   }
 }
@@ -374,8 +374,8 @@ function draw() {
     const dy = d.y - mouse.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
     if (dist < 120 && dist > 0) {
-      d.x += (dx / dist) * 5;
-      d.y += (dy / dist) * 5;
+      d.x += (dx / dist) * 10;
+      d.y += (dy / dist) * 10;
     }
     d.x += d.vx;
     d.y += d.vy;
@@ -413,7 +413,7 @@ const modalTitle = document.getElementById('modalTitle');
 const modalDesc = document.getElementById('modalDesc');
 const modalClose = projectModal?.querySelector('.modal-close');
 
-document.querySelectorAll('.project').forEach(card => {
+document.querySelectorAll('.project[data-project]').forEach(card => {
   card.addEventListener('click', () => {
     const key = card.dataset.project;
     const lang = document.documentElement.lang;
@@ -440,6 +440,19 @@ projectModal?.addEventListener('click', e => {
     projectModal.classList.remove('open');
     projectModal.setAttribute('aria-hidden', 'true');
   }
+});
+
+// Project filters
+document.querySelectorAll('.project-filters .filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.project-filters .filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.projects .project').forEach(card => {
+      const cat = card.dataset.category;
+      card.style.display = filter === 'all' || cat === filter ? '' : 'none';
+    });
+  });
 });
 
 // Year
