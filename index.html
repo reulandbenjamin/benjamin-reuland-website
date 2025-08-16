@@ -26,6 +26,7 @@
 <body>
   <!-- Ajouter la classe "no-desktop-nav" sur <body> pour un en-tête sans navigation sur desktop -->
   <a class="skip-link" href="#main">Aller au contenu</a>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <!-- Ajouter la classe "compact" à .site-header pour une version sans navigation sur desktop -->
   <header class="site-header" role="banner">
@@ -63,13 +64,12 @@
   <main id="main">
     <!-- HERO -->
     <section id="accueil" class="section hero" aria-label="Accueil">
-      <canvas id="bg-canvas" aria-hidden="true"></canvas>
       <div class="container hero-inner">
         <h1 class="hero-title" data-i18n="hero.title">Ingénierie & Web, au service du réel.</h1>
         <p class="hero-sub" data-i18n="hero.subtitle">Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour construire un monde meilleur</p>
         <div class="hero-ctas">
-          <a class="btn primary magnet" href="#projets" data-i18n="hero.ctaProjects">Voir mes projets</a>
-          <a class="btn ghost magnet" href="#contact" data-i18n="hero.ctaContact">Me contacter</a>
+          <a class="btn primary" href="#projets" data-i18n="hero.ctaProjects">Voir mes projets</a>
+          <a class="btn ghost" href="#contact" data-i18n="hero.ctaContact">Me contacter</a>
         </div>
       </div>
     </section>
@@ -277,7 +277,7 @@
             <input id="consent" type="checkbox" required />
             <label for="consent">J’accepte que mes données soient utilisées pour me recontacter (RGPD).</label>
           </div>
-          <div class="actions w-100"><button class="btn primary magnet" type="submit">Envoyer</button></div>
+          <div class="actions w-100"><button class="btn primary" type="submit">Envoyer</button></div>
           <p role="status" class="form-msg" aria-live="polite"></p>
     
         </form>
