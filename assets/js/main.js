@@ -33,7 +33,7 @@ langSelect?.addEventListener('change',()=>{ currentLang=langSelect.value; localS
 
 async function loadI18n(lang){
   try{
-    const res=await fetch(`/assets/i18n/${lang}.json`,{cache:'no-store'});
+    const res=await fetch(`assets/i18n/${lang}.json`,{cache:'no-store'});
     const dict=await res.json();
     document.title=dict.meta?.title || document.title;
     const metaDesc=document.querySelector('meta[name="description"]'); if(dict.meta?.description) metaDesc?.setAttribute('content',dict.meta.description);
@@ -53,7 +53,9 @@ function adjustHeroHeight(){
   const hero=$('.hero'); const firstCard=$('#highlights .card'); const header=$('.site-header');
   if(!hero || !firstCard || !header) return;
   if(!desktop){ root.style.removeProperty('--hero-min'); return; }
-  const vh=window.innerHeight, cardH=firstCard.offsetHeight, headerH=header.offsetHeight;
+  const vh=window.innerHeight, cardH=firstCard.offsetHeight;
+  const headerFixed=getComputedStyle(header).position==='fixed';
+  const headerH=headerFixed?0:header.offsetHeight;
   const ratio=0.80; // ~80% visible
   const min=320;
   const h=Math.max(min, Math.round(vh - ratio*cardH - headerH - 12) - 20);
@@ -108,13 +110,7 @@ if(canvas){
   });
 }
 
-/* MAGNET */
-$$('.magnet').forEach(el=>{
-  el.addEventListener('mousemove',e=>{
-    const r=el.getBoundingClientRect(); const dx=(e.clientX-(r.left+r.width/2))/(r.width/2); const dy=(e.clientY-(r.top+r.height/2))/(r.height/2);
-    el.style.transform=`translate(${dx*6}px, ${dy*6}px)`;});
-  el.addEventListener('mouseleave',()=> el.style.transform='translate(0,0)');
-});
+
 
 /* SKILLS — animate meters on first view */
 const skillsSection=$('#competences');
@@ -143,16 +139,7 @@ chips.forEach(btn=>btn.addEventListener('click',()=>{
   cards.forEach(card=>{
     const tags=card.dataset.tags.split(',');
     const show=(f==='all')||tags.includes(f);
-    if(show){
-      card.classList.remove('is-hidden');
-      card.style.opacity='0';
-      card.style.transform='scale(.96)';
-      requestAnimationFrame(()=>{ card.style.opacity='1'; card.style.transform='scale(1)'; });
-    }else{
-      card.style.opacity='0';
-      card.style.transform='scale(.96)';
-      setTimeout(()=> card.classList.add('is-hidden'), 500);
-    }
+    card.classList.toggle('is-hidden', !show);
   });
 }));
 
