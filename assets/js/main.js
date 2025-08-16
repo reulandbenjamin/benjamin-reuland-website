@@ -1,5 +1,6 @@
 const themeToggle = document.getElementById('themeToggle');
-const langSelect = document.getElementById('langSelect');
+const langBtn = document.getElementById('langBtn');
+const langMenu = document.getElementById('langMenu');
 const menuToggle = document.getElementById('menuToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -21,10 +22,13 @@ const translations = {
       title: 'Ingénierie & Web, au service du réel.',
       subtitle: "Je m'appelle Benjamin, je suis étudiant en ingénierie industrielle, autoformé au web et engagé pour construire un monde meilleur",
       ctaProjects: 'Voir mes projets',
-      ctaContact: 'Me contacter'
+      ctaContact: 'Me contacter',
+      highlight1: 'Étudiant en ingénierie',
+      highlight2: 'Développeur web',
+      highlight3: 'Engagé citoyen'
     },
     about: {
-      title: 'À propos',
+      title: 'Quelques informations sur moi',
       p1: "Je m’appelle <strong>Benjamin Reuland</strong>. Je suis étudiant en <strong>ingénierie industrielle</strong> à Liège, avec une affinité marquée pour l’<strong>électronique</strong>, les <strong>systèmes embarqués</strong> et l’intégration web. J’aime les projets concrets : partir d’un besoin, livrer un prototype mesurable, itérer vite et documenter proprement.",
       p2: "Côté <strong>web</strong>, je conçois des sites statiques et des interfaces sobres, <strong>performantes</strong> (accessibilité, SEO, temps de chargement), faciles à prendre en main. Côté <strong>ingénierie</strong>, je bricole capteurs, microcontrôleurs et API pour connecter le terrain au web (proofs of concept, IoT léger, dashboards). Mon critère : un impact réel pour des <strong>associations</strong>, des <strong>artisans</strong> et des projets <strong>éducatifs</strong>.",
       p3: "Je privilégie des solutions <strong>claires</strong> et <strong>maintenables</strong> plutôt que des effets tape-à-l’œil. Si votre idée implique du hardware léger, un peu de code et une livraison rapide, on est alignés.",
@@ -32,6 +36,13 @@ const translations = {
       goal2: 'Missions freelance web',
       goal3: 'Partenariats éducatifs',
       goal4: 'Projets citoyens'
+    },
+    skills: {
+      title: 'Compétences',
+      html: 'HTML / CSS',
+      js: 'JavaScript',
+      embedded: 'Systèmes embarqués',
+      team: "Travail d'équipe"
     },
     services: {
       title: 'Services',
@@ -42,9 +53,21 @@ const translations = {
     projects: {
       title: 'Projets',
       desc: 'Quelques réalisations web et embarquées.',
-      p1: 'Site statique optimisé SEO pour une association locale.',
-      p2: 'Visualisation de capteurs embarqués via API et interface web.',
-      p3: 'Intégration e-commerce légère pour artisan.'
+      p1: {
+        title: 'Site Onepage',
+        short: 'Site statique optimisé SEO pour une association locale.',
+        long: "Conception d'un site onepage statique pour une association locale, optimisé pour le référencement naturel, temps de chargement réduit, utilisation de HTML/CSS modernes, déploiement sur hébergeur léger et formation des bénévoles à la mise à jour des contenus."
+      },
+      p2: {
+        title: 'Dashboard IoT',
+        short: 'Visualisation de capteurs embarqués via API et interface web.',
+        long: "Développement d'un tableau de bord IoT reliant plusieurs capteurs embarqués à une API maison, stockage des mesures, visualisation temps réel via graphiques web réactifs, mise en place d'alertes et documentation pour la maintenance."
+      },
+      p3: {
+        title: 'Boutique en ligne',
+        short: 'Intégration e-commerce légère pour artisan.',
+        long: "Intégration d'une boutique en ligne minimaliste pour un artisan : catalogue, panier simplifié, paiement sécurisé, configuration de l'interface d'administration et accompagnement pour la gestion autonome des commandes."
+      }
     },
     contact: {
       title: 'Contact',
@@ -69,10 +92,13 @@ const translations = {
       title: 'Engineering & Web, serving the real world.',
       subtitle: "I'm Benjamin, an industrial engineering student, self-taught in web, committed to building a better world",
       ctaProjects: 'See my projects',
-      ctaContact: 'Contact me'
+      ctaContact: 'Contact me',
+      highlight1: 'Engineering student',
+      highlight2: 'Web developer',
+      highlight3: 'Civic-minded'
     },
     about: {
-      title: 'About',
+      title: 'Some info about me',
       p1: "My name is <strong>Benjamin Reuland</strong>. I'm an <strong>industrial engineering</strong> student in Liège with a strong affinity for <strong>electronics</strong>, <strong>embedded systems</strong> and web integration. I like concrete projects: start from a need, deliver a measurable prototype, iterate fast and document cleanly.",
       p2: "On the <strong>web</strong> side, I design static sites and sober, <strong>high-performance</strong> interfaces (accessibility, SEO, load time) that are easy to use. On the <strong>engineering</strong> side, I tinker with sensors, microcontrollers and APIs to connect the field to the web (proofs of concept, light IoT, dashboards). My criterion: real impact for <strong>associations</strong>, <strong>craftspeople</strong> and <strong>educational projects</strong>.",
       p3: "I favor <strong>clear</strong> and <strong>maintainable</strong> solutions over flashy effects. If your idea involves light hardware, some code and fast delivery, we're aligned.",
@@ -80,6 +106,13 @@ const translations = {
       goal2: 'Freelance web missions',
       goal3: 'Educational partnerships',
       goal4: 'Citizen projects'
+    },
+    skills: {
+      title: 'Skills',
+      html: 'HTML / CSS',
+      js: 'JavaScript',
+      embedded: 'Embedded systems',
+      team: 'Teamwork'
     },
     services: {
       title: 'Services',
@@ -90,9 +123,21 @@ const translations = {
     projects: {
       title: 'Projects',
       desc: 'Some web and embedded achievements.',
-      p1: 'SEO-optimized static site for a local association.',
-      p2: 'Visualization of embedded sensors via API and web interface.',
-      p3: 'Light e-commerce integration for a craftsman.'
+      p1: {
+        title: 'Onepage site',
+        short: 'SEO-optimized static site for a local association.',
+        long: 'Design and build of a static onepage for a local non-profit: semantic HTML/CSS, performance budget under one second, deployment on a lightweight host and training for volunteers to edit content.'
+      },
+      p2: {
+        title: 'IoT Dashboard',
+        short: 'Visualization of embedded sensors via API and web interface.',
+        long: 'Development of an IoT dashboard linking several embedded sensors to a custom API, data storage, real-time charts, alert system and maintenance documentation.'
+      },
+      p3: {
+        title: 'Online shop',
+        short: 'Light e-commerce integration for a craftsman.',
+        long: 'Implementation of a minimalist e-commerce platform for a craftsman: catalog, lightweight cart, secure payment, admin interface setup and guidance for autonomous order management.'
+      }
     },
     contact: {
       title: 'Contact',
@@ -269,13 +314,28 @@ function applyTranslations(lang) {
 }
 
 const storedLang = localStorage.getItem('lang') || 'fr';
-langSelect.value = storedLang;
 applyTranslations(storedLang);
+if (langBtn) langBtn.textContent = storedLang.toUpperCase();
 
-langSelect.addEventListener('change', e => {
-  const lang = e.target.value;
-  applyTranslations(lang);
-  localStorage.setItem('lang', lang);
+if (langBtn) {
+  langBtn.addEventListener('click', () => {
+    const expanded = langBtn.getAttribute('aria-expanded') === 'true';
+    langBtn.setAttribute('aria-expanded', String(!expanded));
+    langMenu.classList.toggle('open');
+  });
+}
+
+langMenu?.querySelectorAll('li').forEach(li => {
+  li.addEventListener('click', () => {
+    const lang = li.dataset.lang;
+    applyTranslations(lang);
+    localStorage.setItem('lang', lang);
+    if (langBtn) {
+      langBtn.textContent = lang.toUpperCase();
+      langBtn.setAttribute('aria-expanded', 'false');
+    }
+    langMenu.classList.remove('open');
+  });
 });
 
 // Mobile menu
@@ -310,8 +370,15 @@ function draw() {
   ctx.clearRect(0, 0, width, height);
   const color = getComputedStyle(document.documentElement).getPropertyValue('--text');
   dots.forEach(d => {
-    d.x += d.vx + (mouse.x - d.x) * 0.0005;
-    d.y += d.vy + (mouse.y - d.y) * 0.0005;
+    const dx = d.x - mouse.x;
+    const dy = d.y - mouse.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    if (dist < 120 && dist > 0) {
+      d.x += (dx / dist) * 5;
+      d.y += (dy / dist) * 5;
+    }
+    d.x += d.vx;
+    d.y += d.vy;
     if (d.x < 0 || d.x > width) d.vx *= -1;
     if (d.y < 0 || d.y > height) d.vy *= -1;
     ctx.beginPath();
@@ -326,6 +393,54 @@ window.addEventListener('resize', initCanvas);
 window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 initCanvas();
 draw();
+
+// Skills animation
+const skillObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target.querySelector('.progress div');
+      const pct = entry.target.querySelector('.progress').dataset.progress;
+      bar.style.width = pct + '%';
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.skill').forEach(s => skillObserver.observe(s));
+
+// Project modals
+const projectModal = document.getElementById('projectModal');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalClose = projectModal?.querySelector('.modal-close');
+
+document.querySelectorAll('.project').forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.project;
+    const lang = document.documentElement.lang;
+    const data = translations[lang].projects[key];
+    if (typeof data === 'string') {
+      modalTitle.textContent = data;
+      modalDesc.textContent = '';
+    } else {
+      modalTitle.textContent = data.title;
+      modalDesc.textContent = data.long;
+    }
+    projectModal.classList.add('open');
+    projectModal.setAttribute('aria-hidden', 'false');
+  });
+});
+
+modalClose?.addEventListener('click', () => {
+  projectModal.classList.remove('open');
+  projectModal.setAttribute('aria-hidden', 'true');
+});
+
+projectModal?.addEventListener('click', e => {
+  if (e.target === projectModal) {
+    projectModal.classList.remove('open');
+    projectModal.setAttribute('aria-hidden', 'true');
+  }
+});
 
 // Year
 const yearEl = document.getElementById('year');

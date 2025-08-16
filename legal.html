@@ -7,7 +7,7 @@
   <meta name="description" content="Mentions légales et politique de confidentialité du site benjamin-reuland.be." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -17,14 +17,16 @@
     <a class="logo" href="/">BR</a>
     <div class="actions">
       <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
-      <label for="langSelect" class="sr-only">Langue</label>
-      <select id="langSelect" name="lang" class="lang-select" aria-label="Changer de langue">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-        <option value="de">DE</option>
-        <option value="nl">NL</option>
-        <option value="se">SE</option>
-      </select>
+      <div class="lang-switcher">
+        <button id="langBtn" class="btn lang-btn" aria-haspopup="listbox" aria-expanded="false">FR</button>
+        <ul id="langMenu" class="lang-menu" role="listbox">
+          <li data-lang="fr">FR</li>
+          <li data-lang="en">EN</li>
+          <li data-lang="de">DE</li>
+          <li data-lang="nl">NL</li>
+          <li data-lang="se">SE</li>
+        </ul>
+      </div>
     </div>
   </header>
 

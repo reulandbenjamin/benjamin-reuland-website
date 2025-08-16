@@ -7,7 +7,7 @@
   <meta name="description" content="Étudiant ingénieur industriel (électronique/embarqués) et développeur web. Projets concrets, impact réel." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -20,14 +20,16 @@
     </button>
     <div class="actions">
       <button id="themeToggle" class="btn icon" aria-label="Changer de thème">🌓</button>
-      <label for="langSelect" class="sr-only">Langue</label>
-      <select id="langSelect" name="lang" class="lang-select" aria-label="Changer de langue">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-        <option value="de">DE</option>
-        <option value="nl">NL</option>
-        <option value="se">SE</option>
-      </select>
+      <div class="lang-switcher">
+        <button id="langBtn" class="btn lang-btn" aria-haspopup="listbox" aria-expanded="false">FR</button>
+        <ul id="langMenu" class="lang-menu" role="listbox">
+          <li data-lang="fr">FR</li>
+          <li data-lang="en">EN</li>
+          <li data-lang="de">DE</li>
+          <li data-lang="nl">NL</li>
+          <li data-lang="se">SE</li>
+        </ul>
+      </div>
     </div>
   </header>
 
@@ -47,19 +49,41 @@
         <a class="btn primary" href="#projects" data-i18n="hero.ctaProjects">Voir mes projets</a>
         <a class="btn ghost" href="#contact" data-i18n="hero.ctaContact">Me contacter</a>
       </div>
+      <div class="hero-highlights">
+        <span data-i18n="hero.highlight1">Étudiant en ingénierie</span>
+        <span data-i18n="hero.highlight2">Développeur web</span>
+        <span data-i18n="hero.highlight3">Engagé citoyen</span>
+      </div>
     </section>
 
     <section id="about" class="section" aria-label="À propos">
-      <h2 data-i18n="about.title">À propos</h2>
-      <p data-i18n="about.p1">Je m’appelle <strong>Benjamin Reuland</strong>. Je suis étudiant en <strong>ingénierie industrielle</strong> à Liège, avec une affinité marquée pour l’<strong>électronique</strong>, les <strong>systèmes embarqués</strong> et l’intégration web. J’aime les projets concrets : partir d’un besoin, livrer un prototype mesurable, itérer vite et documenter proprement.</p>
-      <p data-i18n="about.p2">Côté <strong>web</strong>, je conçois des sites statiques et des interfaces sobres, <strong>performantes</strong> (accessibilité, SEO, temps de chargement), faciles à prendre en main. Côté <strong>ingénierie</strong>, je bricole capteurs, microcontrôleurs et API pour connecter le terrain au web (proofs of concept, IoT léger, dashboards). Mon critère : un impact réel pour des <strong>associations</strong>, des <strong>artisans</strong> et des projets <strong>éducatifs</strong>.</p>
-      <p data-i18n="about.p3">Je privilégie des solutions <strong>claires</strong> et <strong>maintenables</strong> plutôt que des effets tape-à-l’œil. Si votre idée implique du hardware léger, un peu de code et une livraison rapide, on est alignés.</p>
-      <ul class="goals">
-        <li data-i18n="about.goal1">Stage en électronique/embarqués</li>
-        <li data-i18n="about.goal2">Missions freelance web</li>
-        <li data-i18n="about.goal3">Partenariats éducatifs</li>
-        <li data-i18n="about.goal4">Projets citoyens</li>
-      </ul>
+      <h2 data-i18n="about.title">Quelques informations sur moi</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="assets/img/profile.svg" alt="Benjamin Reuland"/>
+        </div>
+        <div class="about-text">
+          <p data-i18n="about.p1">Je m’appelle <strong>Benjamin Reuland</strong>. Je suis étudiant en <strong>ingénierie industrielle</strong> à Liège, avec une affinité marquée pour l’<strong>électronique</strong>, les <strong>systèmes embarqués</strong> et l’intégration web. J’aime les projets concrets : partir d’un besoin, livrer un prototype mesurable, itérer vite et documenter proprement.</p>
+          <p data-i18n="about.p2">Côté <strong>web</strong>, je conçois des sites statiques et des interfaces sobres, <strong>performantes</strong> (accessibilité, SEO, temps de chargement), faciles à prendre en main. Côté <strong>ingénierie</strong>, je bricole capteurs, microcontrôleurs et API pour connecter le terrain au web (proofs of concept, IoT léger, dashboards). Mon critère : un impact réel pour des <strong>associations</strong>, des <strong>artisans</strong> et des projets <strong>éducatifs</strong>.</p>
+          <p data-i18n="about.p3">Je privilégie des solutions <strong>claires</strong> et <strong>maintenables</strong> plutôt que des effets tape-à-l’œil. Si votre idée implique du hardware léger, un peu de code et une livraison rapide, on est alignés.</p>
+          <ul class="goals">
+            <li data-i18n="about.goal1">Stage en électronique/embarqués</li>
+            <li data-i18n="about.goal2">Missions freelance web</li>
+            <li data-i18n="about.goal3">Partenariats éducatifs</li>
+            <li data-i18n="about.goal4">Projets citoyens</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section" aria-label="Compétences">
+      <h2 data-i18n="skills.title">Compétences</h2>
+      <div class="skills">
+        <div class="skill"><span data-i18n="skills.html">HTML / CSS</span><div class="progress" data-progress="90"><div></div></div></div>
+        <div class="skill"><span data-i18n="skills.js">JavaScript</span><div class="progress" data-progress="80"><div></div></div></div>
+        <div class="skill"><span data-i18n="skills.embedded">Systèmes embarqués</span><div class="progress" data-progress="70"><div></div></div></div>
+        <div class="skill"><span data-i18n="skills.team">Travail d'équipe</span><div class="progress" data-progress="85"><div></div></div></div>
+      </div>
     </section>
 
     <section id="services" class="section" aria-label="Services">
@@ -74,12 +98,32 @@
     <section id="projects" class="section" aria-label="Projets">
       <h2 data-i18n="projects.title">Projets</h2>
       <p data-i18n="projects.desc">Quelques réalisations web et embarquées.</p>
-      <div class="cards">
-        <article class="card"><h3>Site Onepage</h3><p data-i18n="projects.p1">Site statique optimisé SEO pour une association locale.</p></article>
-        <article class="card"><h3>Dashboard IoT</h3><p data-i18n="projects.p2">Visualisation de capteurs embarqués via API et interface web.</p></article>
-        <article class="card"><h3>Boutique en ligne</h3><p data-i18n="projects.p3">Intégration e-commerce légère pour artisan.</p></article>
+      <div class="cards projects">
+        <article class="card project" data-project="p1">
+          <img src="assets/img/project1.svg" alt="Site Onepage"/>
+          <h3 data-i18n="projects.p1.title">Site Onepage</h3>
+          <p data-i18n="projects.p1.short">Site statique optimisé SEO pour une association locale.</p>
+        </article>
+        <article class="card project" data-project="p2">
+          <img src="assets/img/project2.svg" alt="Dashboard IoT"/>
+          <h3 data-i18n="projects.p2.title">Dashboard IoT</h3>
+          <p data-i18n="projects.p2.short">Visualisation de capteurs embarqués via API et interface web.</p>
+        </article>
+        <article class="card project" data-project="p3">
+          <img src="assets/img/project3.svg" alt="Boutique en ligne"/>
+          <h3 data-i18n="projects.p3.title">Boutique en ligne</h3>
+          <p data-i18n="projects.p3.short">Intégration e-commerce légère pour artisan.</p>
+        </article>
       </div>
     </section>
+
+    <div id="projectModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Fermer">×</button>
+        <h3 id="modalTitle">Titre</h3>
+        <p id="modalDesc">Description</p>
+      </div>
+    </div>
 
     <section id="contact" class="section" aria-label="Contact">
       <h2 data-i18n="contact.title">Contact</h2>
